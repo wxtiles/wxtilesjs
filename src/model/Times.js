@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'), require('./Time'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.Times = factory(root.CloudburstApi.ApiClient, root.CloudburstApi.Time);
+    root.WxTiles.Times = factory(root.WxTiles.ApiClient, root.WxTiles.Time);
   }
 }(this, function(ApiClient, Time) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The Times model module.
    * @module model/Times
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

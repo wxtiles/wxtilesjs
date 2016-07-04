@@ -7,23 +7,23 @@
     module.exports = factory(require('../ApiClient'), require('../model/Instance'), require('../model/Error'), require('../model/Legend'), require('../model/Layer'), require('../model/Layers'), require('../model/Levels'), require('../model/Times'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.WxTilesApi = factory(root.CloudburstApi.ApiClient, root.CloudburstApi.Instance, root.CloudburstApi.Error, root.CloudburstApi.Legend, root.CloudburstApi.Layer, root.CloudburstApi.Layers, root.CloudburstApi.Levels, root.CloudburstApi.Times);
+    root.WxTiles.TilesApi = factory(root.WxTiles.ApiClient, root.WxTiles.Instance, root.WxTiles.Error, root.WxTiles.Legend, root.WxTiles.Layer, root.WxTiles.Layers, root.WxTiles.Levels, root.WxTiles.Times);
   }
 }(this, function(ApiClient, Instance, Error, Legend, Layer, Layers, Levels, Times) {
   'use strict';
 
   /**
-   * WxTiles service.
-   * @module api/WxTilesApi
-   * @version 1.2.0
+   * Tiles service.
+   * @module api/TilesApi
+   * @version 1.0.1
    */
 
   /**
-   * Constructs a new WxTilesApi. 
-   * @alias module:api/WxTilesApi
+   * Constructs a new TilesApi. 
+   * @alias module:api/TilesApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
    * if unspecified.
@@ -34,7 +34,7 @@
 
     /**
      * Callback function to receive the result of the getInstance operation.
-     * @callback module:api/WxTilesApi~getInstanceCallback
+     * @callback module:api/TilesApi~getInstanceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Instance} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -46,7 +46,7 @@
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.
-     * @param {module:api/WxTilesApi~getInstanceCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getInstanceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Instance}
      */
     this.getInstance = function(ownerId, layerId, instanceId, callback) {
@@ -86,7 +86,7 @@
       var returnType = Instance;
 
       return this.apiClient.callApi(
-        '/{ownerId}/layer/{layerId}/instance/{instanceId}/', 'GET',
+        '/{ownerId}/layer/{layerId}/{instanceId}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -94,7 +94,7 @@
 
     /**
      * Callback function to receive the result of the getJSONLegend operation.
-     * @callback module:api/WxTilesApi~getJSONLegendCallback
+     * @callback module:api/TilesApi~getJSONLegendCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Legend} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -108,7 +108,7 @@
      * @param {String} instanceId The id of the instance.
      * @param {module:model/String} size The size.
      * @param {module:model/String} orientation The orientation.
-     * @param {module:api/WxTilesApi~getJSONLegendCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getJSONLegendCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Legend}
      */
     this.getJSONLegend = function(ownerId, layerId, instanceId, size, orientation, callback) {
@@ -160,7 +160,7 @@
       var returnType = Legend;
 
       return this.apiClient.callApi(
-        '/{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.json', 'GET',
+        '/{ownerId}/legend/{size}/{orientation}/{layerId}/{instanceId}.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -168,7 +168,7 @@
 
     /**
      * Callback function to receive the result of the getLayer operation.
-     * @callback module:api/WxTilesApi~getLayerCallback
+     * @callback module:api/TilesApi~getLayerCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Layer} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -179,7 +179,7 @@
      * This endpoint provides information about a specific *Cloudburst* layer that can be requested as map tiles, and its metadata, including bounding boxes and the unit system (metric, USCS, etc.) that is used when rendering map tiles.
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
-     * @param {module:api/WxTilesApi~getLayerCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getLayerCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Layer}
      */
     this.getLayer = function(ownerId, layerId, callback) {
@@ -221,7 +221,7 @@
 
     /**
      * Callback function to receive the result of the getLayers operation.
-     * @callback module:api/WxTilesApi~getLayersCallback
+     * @callback module:api/TilesApi~getLayersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Layers} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -233,7 +233,7 @@
      * @param {String} ownerId The owner of the dataset.
      * @param {Object} opts Optional parameters
      * @param {String} opts.tags Filter layers by tags, separated by commas. Using multiple `tags` parameters is equivalent to an `AND` operation. For example, `tags=x,y` is `x OR y`; `tags=x&amp;tags=y` is `x AND y`; and `tags=x,y&amp;tags=z` is `(x OR y) AND z`
-     * @param {module:api/WxTilesApi~getLayersCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getLayersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Layers}
      */
     this.getLayers = function(ownerId, opts, callback) {
@@ -271,7 +271,7 @@
 
     /**
      * Callback function to receive the result of the getLevels operation.
-     * @callback module:api/WxTilesApi~getLevelsCallback
+     * @callback module:api/TilesApi~getLevelsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Levels} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -279,11 +279,11 @@
 
     /**
      * A collection of vertical levels for which data exists and can be requested (as tiles) for an instance of a layer.
-     * This endpoint exposes the array of vertical positions that data exists for a particular instance. Each element can be used to substitute the {level} part of a tile URL. Not all layer instances have a vertical (e.g. it may be surface wave height and therefore only apply at sea level). If a layer has no vertical dimension, the array will be empty.
+     * This endpoint exposes the array of vertical positions that data exists for a particular instance. Each element can be used to substitute the &lt;level&gt; part of a tile URL. Not all layer instances have a vertical (e.g. it may be surface wave height and therefore only apply at sea level). If a layer has no vertical dimension, the array will be empty.
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.
-     * @param {module:api/WxTilesApi~getLevelsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getLevelsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Levels}
      */
     this.getLevels = function(ownerId, layerId, instanceId, callback) {
@@ -323,7 +323,7 @@
       var returnType = Levels;
 
       return this.apiClient.callApi(
-        '/{ownerId}/layer/{layerId}/instance/{instanceId}/levels/', 'GET',
+        '/{ownerId}/layer/{layerId}/{instanceId}/levels/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -331,7 +331,7 @@
 
     /**
      * Callback function to receive the result of the getPNGLegend operation.
-     * @callback module:api/WxTilesApi~getPNGLegendCallback
+     * @callback module:api/TilesApi~getPNGLegendCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -345,7 +345,7 @@
      * @param {String} instanceId The id of the instance.
      * @param {module:model/String} size The size.
      * @param {module:model/String} orientation The orientation.
-     * @param {module:api/WxTilesApi~getPNGLegendCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getPNGLegendCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.getPNGLegend = function(ownerId, layerId, instanceId, size, orientation, callback) {
       var postBody = null;
@@ -396,7 +396,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.png', 'GET',
+        '/{ownerId}/legend/{size}/{orientation}/{layerId}/{instanceId}.png', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -404,7 +404,7 @@
 
     /**
      * Callback function to receive the result of the getTile operation.
-     * @callback module:api/WxTilesApi~getTileCallback
+     * @callback module:api/TilesApi~getTileCallback
      * @param {String} error Error message, if any.
      * @param {File} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -418,14 +418,14 @@
      * @param {String} instanceId The id of the instance.
      * @param {Date} time The time.
      * @param {String} level The level.
-     * @param {Integer} z The z.
-     * @param {Integer} x The x.
-     * @param {Integer} y2 The y.
+     * @param {Integer} zCoord The z.
+     * @param {Integer} xCoord The x.
+     * @param {Integer} yCoord The y.
      * @param {module:model/String} extension The extension.
-     * @param {module:api/WxTilesApi~getTileCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getTileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {File}
      */
-    this.getTile = function(ownerId, layerId, instanceId, time, level, z, x, y2, extension, callback) {
+    this.getTile = function(ownerId, layerId, instanceId, time, level, zCoord, xCoord, yCoord, extension, callback) {
       var postBody = null;
 
       // verify the required parameter 'ownerId' is set
@@ -453,19 +453,19 @@
         throw "Missing the required parameter 'level' when calling getTile";
       }
 
-      // verify the required parameter 'z' is set
-      if (z == undefined || z == null) {
-        throw "Missing the required parameter 'z' when calling getTile";
+      // verify the required parameter 'zCoord' is set
+      if (zCoord == undefined || zCoord == null) {
+        throw "Missing the required parameter 'zCoord' when calling getTile";
       }
 
-      // verify the required parameter 'x' is set
-      if (x == undefined || x == null) {
-        throw "Missing the required parameter 'x' when calling getTile";
+      // verify the required parameter 'xCoord' is set
+      if (xCoord == undefined || xCoord == null) {
+        throw "Missing the required parameter 'xCoord' when calling getTile";
       }
 
-      // verify the required parameter 'y2' is set
-      if (y2 == undefined || y2 == null) {
-        throw "Missing the required parameter 'y2' when calling getTile";
+      // verify the required parameter 'yCoord' is set
+      if (yCoord == undefined || yCoord == null) {
+        throw "Missing the required parameter 'yCoord' when calling getTile";
       }
 
       // verify the required parameter 'extension' is set
@@ -480,9 +480,9 @@
         'instanceId': instanceId,
         'time': time,
         'level': level,
-        'z': z,
-        'x': x,
-        'y2': y2,
+        'zCoord': zCoord,
+        'xCoord': xCoord,
+        'yCoord': yCoord,
         'extension': extension
       };
       var queryParams = {
@@ -498,7 +498,7 @@
       var returnType = File;
 
       return this.apiClient.callApi(
-        '/{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{z}/{x}/{y2}.{extension}', 'GET',
+        '/{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{zCoord}/{xCoord}/{yCoord}.{extension}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -506,7 +506,7 @@
 
     /**
      * Callback function to receive the result of the getTimes operation.
-     * @callback module:api/WxTilesApi~getTimesCallback
+     * @callback module:api/TilesApi~getTimesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Times} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -518,7 +518,7 @@
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.
-     * @param {module:api/WxTilesApi~getTimesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TilesApi~getTimesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Times}
      */
     this.getTimes = function(ownerId, layerId, instanceId, callback) {
@@ -558,7 +558,7 @@
       var returnType = Times;
 
       return this.apiClient.callApi(
-        '/{ownerId}/layer/{layerId}/instance/{instanceId}/times/', 'GET',
+        '/{ownerId}/layer/{layerId}/{instanceId}/times/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

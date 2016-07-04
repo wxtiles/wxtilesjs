@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.MplKwargs = factory(root.CloudburstApi.ApiClient);
+    root.WxTiles.MplKwargs = factory(root.WxTiles.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The MplKwargs model module.
    * @module model/MplKwargs
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

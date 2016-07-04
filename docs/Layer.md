@@ -1,4 +1,4 @@
-# CloudburstApi.Layer
+# WxTiles.Layer
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CloudburstApi.Levels
+# WxTiles.Levels
 
 ## Properties
 Name | Type | Description | Notes

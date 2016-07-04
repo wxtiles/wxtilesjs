@@ -7,17 +7,17 @@
     module.exports = factory(require('superagent'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.ApiClient = factory(root.superagent);
+    root.WxTiles.ApiClient = factory(root.superagent);
   }
 }(this, function(superagent) {
   'use strict';
 
   /**
    * @module ApiClient
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**
@@ -31,9 +31,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://localhost:6060/
+     * @default http://api.wxtiles.com/
      */
-    this.basePath = 'http://localhost:6060/'.replace(/\/+$/, '');
+    this.basePath = 'http://api.wxtiles.com/'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

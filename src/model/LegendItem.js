@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'), require('./MplKwargs'), require('./Norm'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.LegendItem = factory(root.CloudburstApi.ApiClient, root.CloudburstApi.MplKwargs, root.CloudburstApi.Norm);
+    root.WxTiles.LegendItem = factory(root.WxTiles.ApiClient, root.WxTiles.MplKwargs, root.WxTiles.Norm);
   }
 }(this, function(ApiClient, MplKwargs, Norm) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The LegendItem model module.
    * @module model/LegendItem
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

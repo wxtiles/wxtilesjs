@@ -1,4 +1,4 @@
-# CloudburstApi.MplKwargs
+# WxTiles.MplKwargs
 
 ## Properties
 Name | Type | Description | Notes

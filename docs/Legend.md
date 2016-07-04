@@ -1,4 +1,4 @@
-# CloudburstApi.Legend
+# WxTiles.Legend
 
 ## Properties
 Name | Type | Description | Notes

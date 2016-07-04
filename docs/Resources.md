@@ -1,4 +1,4 @@
-# CloudburstApi.Resources
+# WxTiles.Resources
 
 ## Properties
 Name | Type | Description | Notes

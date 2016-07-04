@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'), require('./Level'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.Levels = factory(root.CloudburstApi.ApiClient, root.CloudburstApi.Level);
+    root.WxTiles.Levels = factory(root.WxTiles.ApiClient, root.WxTiles.Level);
   }
 }(this, function(ApiClient, Level) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The Levels model module.
    * @module model/Levels
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

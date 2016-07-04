@@ -1,4 +1,4 @@
-# CloudburstApi.Bounds
+# WxTiles.Bounds
 
 ## Properties
 Name | Type | Description | Notes

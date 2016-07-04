@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.Norm = factory(root.CloudburstApi.ApiClient);
+    root.WxTiles.Norm = factory(root.WxTiles.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The Norm model module.
    * @module model/Norm
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

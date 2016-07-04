@@ -1,4 +1,4 @@
-# CloudburstApi.Error
+# WxTiles.Error
 
 ## Properties
 Name | Type | Description | Notes

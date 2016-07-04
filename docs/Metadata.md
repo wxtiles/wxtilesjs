@@ -1,4 +1,4 @@
-# CloudburstApi.Metadata
+# WxTiles.Metadata
 
 ## Properties
 Name | Type | Description | Notes

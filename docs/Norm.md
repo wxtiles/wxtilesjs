@@ -1,4 +1,4 @@
-# CloudburstApi.Norm
+# WxTiles.Norm
 
 ## Properties
 Name | Type | Description | Notes

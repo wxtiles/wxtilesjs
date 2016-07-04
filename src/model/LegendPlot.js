@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'), require('./LegendItem'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.LegendPlot = factory(root.CloudburstApi.ApiClient, root.CloudburstApi.LegendItem);
+    root.WxTiles.LegendPlot = factory(root.WxTiles.ApiClient, root.WxTiles.LegendItem);
   }
 }(this, function(ApiClient, LegendItem) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The LegendPlot model module.
    * @module model/LegendPlot
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

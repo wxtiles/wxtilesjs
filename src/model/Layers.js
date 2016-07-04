@@ -7,10 +7,10 @@
     module.exports = factory(require('../ApiClient'), require('./Layer'));
   } else {
     // Browser globals (root is window)
-    if (!root.CloudburstApi) {
-      root.CloudburstApi = {};
+    if (!root.WxTiles) {
+      root.WxTiles = {};
     }
-    root.CloudburstApi.Layers = factory(root.CloudburstApi.ApiClient, root.CloudburstApi.Layer);
+    root.WxTiles.Layers = factory(root.WxTiles.ApiClient, root.WxTiles.Layer);
   }
 }(this, function(ApiClient, Layer) {
   'use strict';
@@ -18,7 +18,7 @@
   /**
    * The Layers model module.
    * @module model/Layers
-   * @version 1.2.0
+   * @version 1.0.1
    */
 
   /**

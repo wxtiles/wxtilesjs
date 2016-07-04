@@ -1,4 +1,4 @@
-# CloudburstApi.LegendPlot
+# WxTiles.LegendPlot
 
 ## Properties
 Name | Type | Description | Notes
