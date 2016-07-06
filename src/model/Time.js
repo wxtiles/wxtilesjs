@@ -18,7 +18,7 @@
   /**
    * The Time model module.
    * @module model/Time
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

@@ -18,12 +18,12 @@
   /**
    * The Level model module.
    * @module model/Level
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**
    * Constructs a new <code>Level</code>.
-   * A potential value of a vertical dimension of an instance. Values in this array is used to substitute \&quot;level\&quot; in a tile URL.
+   * A potential value of a vertical dimension of an instance. Values in this array is used to substitute {level} in a tile URL.
    * @alias module:model/Level
    * @class
    */

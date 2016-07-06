@@ -18,7 +18,7 @@
   /**
    * The Metadata model module.
    * @module model/Metadata
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

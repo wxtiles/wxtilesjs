@@ -18,7 +18,7 @@
   /**
    * The Resources model module.
    * @module model/Resources
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

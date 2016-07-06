@@ -18,7 +18,7 @@
   /**
    * The Levels model module.
    * @module model/Levels
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

@@ -17,7 +17,7 @@
 
   /**
    * @module ApiClient
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**
@@ -31,9 +31,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://api.wxtiles.com/
+     * @default https://api.wxtiles.com/
      */
-    this.basePath = 'http://api.wxtiles.com/'.replace(/\/+$/, '');
+    this.basePath = 'https://api.wxtiles.com/'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

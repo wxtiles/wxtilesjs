@@ -18,7 +18,7 @@
   /**
    * The Bounds model module.
    * @module model/Bounds
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

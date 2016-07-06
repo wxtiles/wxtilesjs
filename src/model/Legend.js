@@ -18,7 +18,7 @@
   /**
    * The Legend model module.
    * @module model/Legend
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

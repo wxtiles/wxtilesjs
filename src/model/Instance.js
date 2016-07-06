@@ -18,7 +18,7 @@
   /**
    * The Instance model module.
    * @module model/Instance
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**
@@ -56,7 +56,7 @@
         obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
       }
       if (data.hasOwnProperty('end_time')) {
-        obj['end_time'] = ApiClient.convertToType(data['end_time'], 'String');
+        obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
       }
     }
     return obj;
@@ -83,7 +83,7 @@
 
   /**
    * ISO 8601 datetime string representing the latest retrievable time-step for an instance
-   * @member {String} end_time
+   * @member {Date} end_time
    */
   exports.prototype['end_time'] = undefined;
 

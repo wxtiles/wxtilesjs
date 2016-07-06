@@ -18,7 +18,7 @@
   /**
    * The MplKwargs model module.
    * @module model/MplKwargs
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

@@ -18,7 +18,7 @@
   /**
    * The LegendPlot model module.
    * @module model/LegendPlot
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

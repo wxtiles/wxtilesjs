@@ -18,7 +18,7 @@
   /**
    * The Layer model module.
    * @module model/Layer
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**

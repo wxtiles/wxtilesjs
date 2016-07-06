@@ -1,17 +1,17 @@
 # WxTiles.TilesApi
 
-All URIs are relative to *http://api.wxtiles.com/*
+All URIs are relative to *https://api.wxtiles.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getInstance**](TilesApi.md#getInstance) | **GET** /{ownerId}/layer/{layerId}/{instanceId}/ | Information about a particular (potentially non-persistant) instance of a layer
-[**getJSONLegend**](TilesApi.md#getJSONLegend) | **GET** /{ownerId}/legend/{size}/{orientation}/{layerId}/{instanceId}.json | A JSON representation of the legend for PNG map tiles
+[**getInstance**](TilesApi.md#getInstance) | **GET** /{ownerId}/layer/{layerId}/instance/{instanceId}/ | Information about a particular (potentially non-persistant) instance of a layer
+[**getJSONLegend**](TilesApi.md#getJSONLegend) | **GET** /{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.json | A JSON representation of the legend for PNG map tiles
 [**getLayer**](TilesApi.md#getLayer) | **GET** /{ownerId}/layer/{layerId}/ | Information about a specific layer
 [**getLayers**](TilesApi.md#getLayers) | **GET** /{ownerId}/layer/ | Information about available Cloudburst layers
-[**getLevels**](TilesApi.md#getLevels) | **GET** /{ownerId}/layer/{layerId}/{instanceId}/levels/ | A collection of vertical levels for which data exists and can be requested (as tiles) for an instance of a layer.
-[**getPNGLegend**](TilesApi.md#getPNGLegend) | **GET** /{ownerId}/legend/{size}/{orientation}/{layerId}/{instanceId}.png | A legend for PNG map tiles
-[**getTile**](TilesApi.md#getTile) | **GET** /{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{zCoord}/{xCoord}/{yCoord}.{extension} | A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
-[**getTimes**](TilesApi.md#getTimes) | **GET** /{ownerId}/layer/{layerId}/{instanceId}/times/ | A collection of moments in time for which data exists and can be requested (as tiles) for an instance of a layer.
+[**getLevels**](TilesApi.md#getLevels) | **GET** /{ownerId}/layer/{layerId}/instance/{instanceId}/levels/ | A collection of vertical levels for which data exists and can be requested (as tiles) for an instance of a layer.
+[**getPNGLegend**](TilesApi.md#getPNGLegend) | **GET** /{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.png | A legend for PNG map tiles
+[**getTile**](TilesApi.md#getTile) | **GET** /{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{z}/{x}/{y2}.{extension} | A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
+[**getTimes**](TilesApi.md#getTimes) | **GET** /{ownerId}/layer/{layerId}/instance/{instanceId}/times/ | A collection of moments in time for which data exists and can be requested (as tiles) for an instance of a layer.
 
 
 <a name="getInstance"></a>
@@ -229,7 +229,7 @@ No authorization required
 
 A collection of vertical levels for which data exists and can be requested (as tiles) for an instance of a layer.
 
-This endpoint exposes the array of vertical positions that data exists for a particular instance. Each element can be used to substitute the &lt;level&gt; part of a tile URL. Not all layer instances have a vertical (e.g. it may be surface wave height and therefore only apply at sea level). If a layer has no vertical dimension, the array will be empty.
+This endpoint exposes the array of vertical positions that data exists for a particular instance. Each element can be used to substitute the {level} part of a tile URL. Not all layer instances have a vertical (e.g. it may be surface wave height and therefore only apply at sea level). If a layer has no vertical dimension, the array will be empty.
 
 ### Example
 ```javascript
@@ -335,7 +335,7 @@ No authorization required
 
 <a name="getTile"></a>
 # **getTile**
-> File getTile(ownerId, layerId, instanceId, time, level, zCoord, xCoord, yCoord, extension)
+> File getTile(ownerId, layerId, instanceId, time, level, z, x, y2, extension)
 
 A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
 
@@ -357,11 +357,11 @@ var time = new Date("2013-10-20T19:20:30+01:00"); // {Date} The time.
 
 var level = "level_example"; // {String} The level.
 
-var zCoord = 56; // {Integer} The z.
+var z = 56; // {Integer} The z.
 
-var xCoord = 56; // {Integer} The x.
+var x = 56; // {Integer} The x.
 
-var yCoord = 56; // {Integer} The y.
+var y2 = 56; // {Integer} The y.
 
 var extension = "extension_example"; // {String} The extension.
 
@@ -373,7 +373,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getTile(ownerId, layerId, instanceId, time, level, zCoord, xCoord, yCoord, extension, callback);
+api.getTile(ownerId, layerId, instanceId, time, level, z, x, y2, extension, callback);
 ```
 
 ### Parameters
@@ -385,9 +385,9 @@ Name | Type | Description  | Notes
  **instanceId** | **String**| The id of the instance. | 
  **time** | **Date**| The time. | 
  **level** | **String**| The level. | 
- **zCoord** | [**Integer**](.md)| The z. | 
- **xCoord** | [**Integer**](.md)| The x. | 
- **yCoord** | [**Integer**](.md)| The y. | 
+ **z** | [**Integer**](.md)| The z. | 
+ **x** | [**Integer**](.md)| The x. | 
+ **y2** | [**Integer**](.md)| The y. | 
  **extension** | **String**| The extension. | 
 
 ### Return type

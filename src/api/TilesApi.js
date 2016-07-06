@@ -18,7 +18,7 @@
   /**
    * Tiles service.
    * @module api/TilesApi
-   * @version 1.0.1
+   * @version 1.2.0
    */
 
   /**
@@ -86,7 +86,7 @@
       var returnType = Instance;
 
       return this.apiClient.callApi(
-        '/{ownerId}/layer/{layerId}/{instanceId}/', 'GET',
+        '/{ownerId}/layer/{layerId}/instance/{instanceId}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -160,7 +160,7 @@
       var returnType = Legend;
 
       return this.apiClient.callApi(
-        '/{ownerId}/legend/{size}/{orientation}/{layerId}/{instanceId}.json', 'GET',
+        '/{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -279,7 +279,7 @@
 
     /**
      * A collection of vertical levels for which data exists and can be requested (as tiles) for an instance of a layer.
-     * This endpoint exposes the array of vertical positions that data exists for a particular instance. Each element can be used to substitute the &lt;level&gt; part of a tile URL. Not all layer instances have a vertical (e.g. it may be surface wave height and therefore only apply at sea level). If a layer has no vertical dimension, the array will be empty.
+     * This endpoint exposes the array of vertical positions that data exists for a particular instance. Each element can be used to substitute the {level} part of a tile URL. Not all layer instances have a vertical (e.g. it may be surface wave height and therefore only apply at sea level). If a layer has no vertical dimension, the array will be empty.
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.
@@ -323,7 +323,7 @@
       var returnType = Levels;
 
       return this.apiClient.callApi(
-        '/{ownerId}/layer/{layerId}/{instanceId}/levels/', 'GET',
+        '/{ownerId}/layer/{layerId}/instance/{instanceId}/levels/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -396,7 +396,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/{ownerId}/legend/{size}/{orientation}/{layerId}/{instanceId}.png', 'GET',
+        '/{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.png', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -418,14 +418,14 @@
      * @param {String} instanceId The id of the instance.
      * @param {Date} time The time.
      * @param {String} level The level.
-     * @param {Integer} zCoord The z.
-     * @param {Integer} xCoord The x.
-     * @param {Integer} yCoord The y.
+     * @param {Integer} z The z.
+     * @param {Integer} x The x.
+     * @param {Integer} y2 The y.
      * @param {module:model/String} extension The extension.
      * @param {module:api/TilesApi~getTileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {File}
      */
-    this.getTile = function(ownerId, layerId, instanceId, time, level, zCoord, xCoord, yCoord, extension, callback) {
+    this.getTile = function(ownerId, layerId, instanceId, time, level, z, x, y2, extension, callback) {
       var postBody = null;
 
       // verify the required parameter 'ownerId' is set
@@ -453,19 +453,19 @@
         throw "Missing the required parameter 'level' when calling getTile";
       }
 
-      // verify the required parameter 'zCoord' is set
-      if (zCoord == undefined || zCoord == null) {
-        throw "Missing the required parameter 'zCoord' when calling getTile";
+      // verify the required parameter 'z' is set
+      if (z == undefined || z == null) {
+        throw "Missing the required parameter 'z' when calling getTile";
       }
 
-      // verify the required parameter 'xCoord' is set
-      if (xCoord == undefined || xCoord == null) {
-        throw "Missing the required parameter 'xCoord' when calling getTile";
+      // verify the required parameter 'x' is set
+      if (x == undefined || x == null) {
+        throw "Missing the required parameter 'x' when calling getTile";
       }
 
-      // verify the required parameter 'yCoord' is set
-      if (yCoord == undefined || yCoord == null) {
-        throw "Missing the required parameter 'yCoord' when calling getTile";
+      // verify the required parameter 'y2' is set
+      if (y2 == undefined || y2 == null) {
+        throw "Missing the required parameter 'y2' when calling getTile";
       }
 
       // verify the required parameter 'extension' is set
@@ -480,9 +480,9 @@
         'instanceId': instanceId,
         'time': time,
         'level': level,
-        'zCoord': zCoord,
-        'xCoord': xCoord,
-        'yCoord': yCoord,
+        'z': z,
+        'x': x,
+        'y2': y2,
         'extension': extension
       };
       var queryParams = {
@@ -498,7 +498,7 @@
       var returnType = File;
 
       return this.apiClient.callApi(
-        '/{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{zCoord}/{xCoord}/{yCoord}.{extension}', 'GET',
+        '/{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{z}/{x}/{y2}.{extension}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -558,7 +558,7 @@
       var returnType = Times;
 
       return this.apiClient.callApi(
-        '/{ownerId}/layer/{layerId}/{instanceId}/times/', 'GET',
+        '/{ownerId}/layer/{layerId}/instance/{instanceId}/times/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
