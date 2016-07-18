@@ -15,9 +15,6 @@
 }(this, function(ApiClient, MplKwargs, Norm) {
   'use strict';
 
-
-
-
   /**
    * The LegendItem model module.
    * @module model/LegendItem
@@ -31,22 +28,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   };
 
   /**
@@ -183,7 +164,6 @@
    */
   exports.prototype['mplkwargs'] = undefined;
 
-
   /**
    * Allowed values for the <code>extend</code> property.
    * @enum {String}
@@ -238,20 +218,20 @@
      */
     "///": "///",
     /**
-     * value: "\\"
-     * @const
-     */
-    "\": "\\",
-    /**
      * value: "\\\\"
      * @const
      */
     "\\": "\\\\",
     /**
-     * value: "\\\\\\"
+     * value: "\\\\\\\\"
      * @const
      */
-    "\\\": "\\\\\\",
+    "\\\\": "\\\\\\\\",
+    /**
+     * value: "\\\\\\\\\\\\"
+     * @const
+     */
+    "\\\\\\": "\\\\\\\\\\\\",
     /**
      * value: "|"
      * @const
@@ -372,7 +352,7 @@
      * @const
      */
     "***": "***"  };
-*/
+
   /**
    * Allowed values for the <code>linestyles</code> property.
    * @enum {String}
@@ -434,7 +414,6 @@
      * @const
      */
     "null": "null"  };
-*/
 
   return exports;
 }));
