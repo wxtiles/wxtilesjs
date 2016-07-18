@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', '../model/Instance', '../model/Error', '../model/Legend', '../model/Layer', '../model/Layers', '../model/Levels', '../model/Times'], factory);
+    define(['ApiClient', 'model/Instance', 'model/Error', 'model/Legend', 'model/Layer', 'model/Layers', 'model/Levels', 'model/Times'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('../model/Instance'), require('../model/Error'), require('../model/Legend'), require('../model/Layer'), require('../model/Layers'), require('../model/Levels'), require('../model/Times'));
@@ -25,8 +25,8 @@
    * Constructs a new TilesApi. 
    * @alias module:api/TilesApi
    * @class
-   * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
-   * if unspecified.
+   * @param {module:ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
@@ -102,7 +102,7 @@
 
     /**
      * A JSON representation of the legend for PNG map tiles
-     * Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. Cloudburst internally uses this JSON representation to render the PNG version of the legend, and this endpoint is exposed to support client-side legend rendering and the interaction that implies. The size must be substituted by either `small` or `large`. The orientation must be substituted by either `horizontal` or `vertical`.
+     * Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. Cloudburst internally uses this JSON representation to render the PNG version of the legend, and this endpoint is exposed to support client-side legend rendering and the interaction that implies. The size must be substituted by either &#x60;small&#x60; or &#x60;large&#x60;. The orientation must be substituted by either &#x60;horizontal&#x60; or &#x60;vertical&#x60;.
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.
@@ -232,7 +232,7 @@
      * This endpoint returns information about all current *Cloudburst* layers that can be requested, and metadata about map layers, including bounding boxes and the unit system (metric, USCS, etc.) that is used when rendering map tiles.
      * @param {String} ownerId The owner of the dataset.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.tags Filter layers by tags, separated by commas. Using multiple `tags` parameters is equivalent to an `AND` operation. For example, `tags=x,y` is `x OR y`; `tags=x&amp;tags=y` is `x AND y`; and `tags=x,y&amp;tags=z` is `(x OR y) AND z`
+     * @param {String} opts.tags Filter layers by tags, separated by commas. Using multiple &#x60;tags&#x60; parameters is equivalent to an &#x60;AND&#x60; operation. For example, &#x60;tags&#x3D;x,y&#x60; is &#x60;x OR y&#x60;; &#x60;tags&#x3D;x&amp;tags&#x3D;y&#x60; is &#x60;x AND y&#x60;; and &#x60;tags&#x3D;x,y&amp;tags&#x3D;z&#x60; is &#x60;(x OR y) AND z&#x60;
      * @param {module:api/TilesApi~getLayersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:model/Layers}
      */
@@ -339,7 +339,7 @@
 
     /**
      * A legend for PNG map tiles
-     * Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. The size must be substituted by either `small` or `large`. The orientation must be substituted by either `horizontal` or `vertical`.
+     * Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. The size must be substituted by either &#x60;small&#x60; or &#x60;large&#x60;. The orientation must be substituted by either &#x60;horizontal&#x60; or &#x60;vertical&#x60;.
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.
@@ -412,7 +412,7 @@
 
     /**
      * A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
-     * Cloudburst produces map tiles, and PNG map tiles are the traditional format for representing these. Other possibilities include protocol-buffer vector tiles in the Mapbox vector tile specification, and others. This endpoint will most often be used by map clients (such as Leaflet, Mapbox GL JS, OpenLayers, and Google Maps), which know exactly which tiles to request for a given geographical map view and zoom level. **The Cloudburst Javascript API is responsible for completing the resource URI via these client libraries, based on what a user is authenticated to request, and what these layers support, via requests to other endpoints. Manual requests are possible but are not recommended.** The resources for a particular layer can be discovered through a `GET` request to `/layer/&lt;layerId&gt;/` and inspecting the response&#39;s `resources` property. The `/layer/&lt;layerId&gt;/&lt;instanceID&gt;/times/` endpoints can be used to request the times that are valid (many layer instances have only one time and/or vertical level).
+     * Cloudburst produces map tiles, and PNG map tiles are the traditional format for representing these. Other possibilities include protocol-buffer vector tiles in the Mapbox vector tile specification, and others. This endpoint will most often be used by map clients (such as Leaflet, Mapbox GL JS, OpenLayers, and Google Maps), which know exactly which tiles to request for a given geographical map view and zoom level. **The Cloudburst Javascript API is responsible for completing the resource URI via these client libraries, based on what a user is authenticated to request, and what these layers support, via requests to other endpoints. Manual requests are possible but are not recommended.** The resources for a particular layer can be discovered through a &#x60;GET&#x60; request to &#x60;/layer/&lt;layerId&gt;/&#x60; and inspecting the response&#39;s &#x60;resources&#x60; property. The &#x60;/layer/&lt;layerId&gt;/&lt;instanceID&gt;/times/&#x60; endpoints can be used to request the times that are valid (many layer instances have only one time and/or vertical level).
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} instanceId The id of the instance.

@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './Layer'], factory);
+    define(['ApiClient', 'model/Layer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./Layer'));
@@ -15,6 +15,9 @@
 }(this, function(ApiClient, Layer) {
   'use strict';
 
+
+
+
   /**
    * The Layers model module.
    * @module model/Layers
@@ -26,10 +29,14 @@
    * All layers meeting your query, that that you are authenticated for, and which are currently available
    * @alias module:model/Layers
    * @class
-   * @extends module:model/Array&lt;Layer&gt;
+   * @extends Array
    */
   var exports = function() {
+    var _this = this;
+    _this = new Array();
+    Object.setPrototypeOf(_this, exports);
 
+    return _this;
   };
 
   /**
@@ -40,15 +47,13 @@
    * @return {module:model/Layers} The populated <code>Layers</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
-      Array&lt;Layer&gt;.constructFromObject(data, obj);
+      ApiClient.constructFromObject(data, obj, Layer);
+
     }
     return obj;
   }
-
-  exports.prototype = Object.create(Array&lt;Layer&gt;.prototype);
-  exports.prototype.constructor = exports;
 
 
 
@@ -56,3 +61,5 @@
 
   return exports;
 }));
+
+

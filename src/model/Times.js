@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './Time'], factory);
+    define(['ApiClient', 'model/Time'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./Time'));
@@ -15,6 +15,9 @@
 }(this, function(ApiClient, Time) {
   'use strict';
 
+
+
+
   /**
    * The Times model module.
    * @module model/Times
@@ -25,10 +28,14 @@
    * Constructs a new <code>Times</code>.
    * @alias module:model/Times
    * @class
-   * @extends module:model/Array&lt;Time&gt;
+   * @extends Array
    */
   var exports = function() {
+    var _this = this;
+    _this = new Array();
+    Object.setPrototypeOf(_this, exports);
 
+    return _this;
   };
 
   /**
@@ -39,15 +46,13 @@
    * @return {module:model/Times} The populated <code>Times</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
-      Array&lt;Time&gt;.constructFromObject(data, obj);
+      ApiClient.constructFromObject(data, obj, Time);
+
     }
     return obj;
   }
-
-  exports.prototype = Object.create(Array&lt;Time&gt;.prototype);
-  exports.prototype.constructor = exports;
 
 
 
@@ -55,3 +60,5 @@
 
   return exports;
 }));
+
+

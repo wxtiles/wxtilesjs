@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -14,6 +14,9 @@
   }
 }(this, function(ApiClient) {
   'use strict';
+
+
+
 
   /**
    * The Norm model module.
@@ -28,6 +31,7 @@
    * @class
    */
   var exports = function() {
+    var _this = this;
 
 
 
@@ -46,7 +50,7 @@
    * @return {module:model/Norm} The populated <code>Norm</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('method')) {
@@ -74,38 +78,31 @@
     return obj;
   }
 
-
   /**
    * Normalisation technique, corresponding to one of the Matplotlib colorbar normalisation methods.
    * @member {module:model/Norm.MethodEnum} method
    */
   exports.prototype['method'] = undefined;
-
   /**
    * @member {Number} vmin
    */
   exports.prototype['vmin'] = undefined;
-
   /**
    * @member {Number} vmax
    */
   exports.prototype['vmax'] = undefined;
-
   /**
    * @member {Boolean} clip
    */
   exports.prototype['clip'] = undefined;
-
   /**
    * @member {Number} gamma
    */
   exports.prototype['gamma'] = undefined;
-
   /**
    * @member {Number} linthresh
    */
   exports.prototype['linthresh'] = undefined;
-
   /**
    * @member {Number} linscale
    */
@@ -117,37 +114,35 @@
    * @enum {String}
    * @readonly
    */
-  exports.MethodEnum = { 
+  exports.MethodEnum = {
     /**
-     * value: LogNorm
+     * value: "LogNorm"
      * @const
      */
-    LOGNORM: "LogNorm",
-    
+    "LogNorm": "LogNorm",
     /**
-     * value: SymLogNorm
+     * value: "SymLogNorm"
      * @const
      */
-    SYMLOGNORM: "SymLogNorm",
-    
+    "SymLogNorm": "SymLogNorm",
     /**
-     * value: PowerNorm
+     * value: "PowerNorm"
      * @const
      */
-    POWERNORM: "PowerNorm",
-    
+    "PowerNorm": "PowerNorm",
     /**
-     * value: BoundaryNorm
+     * value: "BoundaryNorm"
      * @const
      */
-    BOUNDARYNORM: "BoundaryNorm",
-    
+    "BoundaryNorm": "BoundaryNorm",
     /**
-     * value: OffsetNorm
+     * value: "OffsetNorm"
      * @const
      */
-    OFFSETNORM: "OffsetNorm"
-  };
+    "OffsetNorm": "OffsetNorm"  };
+
 
   return exports;
 }));
+
+

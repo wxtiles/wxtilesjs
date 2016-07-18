@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './Level'], factory);
+    define(['ApiClient', 'model/Level'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./Level'));
@@ -15,6 +15,9 @@
 }(this, function(ApiClient, Level) {
   'use strict';
 
+
+
+
   /**
    * The Levels model module.
    * @module model/Levels
@@ -25,10 +28,14 @@
    * Constructs a new <code>Levels</code>.
    * @alias module:model/Levels
    * @class
-   * @extends module:model/Array&lt;Level&gt;
+   * @extends Array
    */
   var exports = function() {
+    var _this = this;
+    _this = new Array();
+    Object.setPrototypeOf(_this, exports);
 
+    return _this;
   };
 
   /**
@@ -39,15 +46,13 @@
    * @return {module:model/Levels} The populated <code>Levels</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
-      Array&lt;Level&gt;.constructFromObject(data, obj);
+      ApiClient.constructFromObject(data, obj, Level);
+
     }
     return obj;
   }
-
-  exports.prototype = Object.create(Array&lt;Level&gt;.prototype);
-  exports.prototype.constructor = exports;
 
 
 
@@ -55,3 +60,5 @@
 
   return exports;
 }));
+
+

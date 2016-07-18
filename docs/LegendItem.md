@@ -20,3 +20,20 @@ Name | Type | Description | Notes
 **mplkwargs** | [**MplKwargs**](MplKwargs.md) |  | [optional] 
 
 
+<a name="ExtendEnum"></a>
+## Enum: ExtendEnum
+
+
+* `neither` (value: `"neither"`)
+
+* `both` (value: `"both"`)
+
+* `min` (value: `"min"`)
+
+* `max` (value: `"max"`)
+
+* `null` (value: `"null"`)
+
+
+
+

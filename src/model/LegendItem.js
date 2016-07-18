@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './MplKwargs', './Norm'], factory);
+    define(['ApiClient', 'model/MplKwargs', 'model/Norm'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./MplKwargs'), require('./Norm'));
@@ -15,6 +15,9 @@
 }(this, function(ApiClient, MplKwargs, Norm) {
   'use strict';
 
+
+
+
   /**
    * The LegendItem model module.
    * @module model/LegendItem
@@ -27,6 +30,7 @@
    * @class
    */
   var exports = function() {
+    var _this = this;
 
 
 
@@ -53,7 +57,7 @@
    * @return {module:model/LegendItem} The populated <code>LegendItem</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cmap')) {
@@ -105,90 +109,75 @@
     return obj;
   }
 
-
   /**
    * The named colourmap used by the plot. Possibly represents one of the default Matplotlib colourmaps, a cmocean Matplotlib colourmap, or a user-defined colourmap.
    * @member {String} cmap
    */
   exports.prototype['cmap'] = undefined;
-
   /**
    * A sorted array of discrete values in the colourmap. If the plot uses levels (e.g. contours), then the array will include the actual class colour. Otherwise, if the plot uses a continuous colour ramp (e.g. a pcolormesh), the array includes ten values sampled evenly between the low and the high value.
    * @member {Array.<String>} cmap_discrete
    */
   exports.prototype['cmap_discrete'] = undefined;
-
   /**
    * A sorted array of values referencing named colours for the lines in the plot (contour-style plots only). If the value is a string (rather than an array), that value applies to all lines.
    * @member {Array.<String>} colors
    */
   exports.prototype['colors'] = undefined;
-
   /**
    * Indicates whether the upper- or lower-boundary of the colourmap should be extended. Unless this is 'neither' or null, contour levels are automatically added to one or both ends of the range so that all data are included. These added ranges are then mapped to the special colormap values which default to the ends of the colormap range.
    * @member {module:model/LegendItem.ExtendEnum} extend
    */
   exports.prototype['extend'] = undefined;
-
   /**
    * Sorted array of hatch styles for the plot's levels
    * @member {Array.<module:model/LegendItem.HatchesEnum>} hatches
    */
   exports.prototype['hatches'] = undefined;
-
   /**
    * A sorted array of values in the dataset where breaks are to be drawn (e.g. contour lines)
    * @member {Array.<Number>} levels
    */
   exports.prototype['levels'] = undefined;
-
   /**
    * A sorted array of values where \"ticks\" (small leader lines) are to be drawn on the legend. With this property, some levels can be left without a tick, or ticks added between class breaks.
    * @member {Array.<Number>} ticks
    */
   exports.prototype['ticks'] = undefined;
-
   /**
    * A sorted array of values for the legend's ticks. With this property, ticks can be given non-default labels (such as human interpretations of critical numerical values).
    * @member {Array.<String>} tick_labels
    */
   exports.prototype['tick_labels'] = undefined;
-
   /**
    * A sorted array of linestyles for the plot levels
    * @member {Array.<module:model/LegendItem.LinestylesEnum>} linestyles
    */
   exports.prototype['linestyles'] = undefined;
-
   /**
    * A sorted array of linewidths for the plot levels
    * @member {Array.<Number>} linewidths
    */
   exports.prototype['linewidths'] = undefined;
-
   /**
    * @member {module:model/Norm} norm
    */
   exports.prototype['norm'] = undefined;
-
   /**
    * Text that is used to indicate the units on the scale; may include additional text beyond a representation of a unit (e.g. \"Low-level azimuthal shear (0.001/s)\")
    * @member {String} unit
    */
   exports.prototype['unit'] = undefined;
-
   /**
    * If present, indicates the upper colour boundary of a continuous plot (such as a pcolormesh).
    * @member {Number} vmax
    */
   exports.prototype['vmax'] = undefined;
-
   /**
    * If present, indicates the lower colour boundary of a continuous plot (such as a pcolormesh).
    * @member {Number} vmin
    */
   exports.prototype['vmin'] = undefined;
-
   /**
    * @member {module:model/MplKwargs} mplkwargs
    */
@@ -200,295 +189,254 @@
    * @enum {String}
    * @readonly
    */
-  exports.ExtendEnum = { 
+  exports.ExtendEnum = {
     /**
-     * value: neither
+     * value: "neither"
      * @const
      */
-    NEITHER: "neither",
-    
+    "neither": "neither",
     /**
-     * value: both
+     * value: "both"
      * @const
      */
-    BOTH: "both",
-    
+    "both": "both",
     /**
-     * value: min
+     * value: "min"
      * @const
      */
-    MIN: "min",
-    
+    "min": "min",
     /**
-     * value: max
+     * value: "max"
      * @const
      */
-    MAX: "max",
-    
+    "max": "max",
     /**
-     * value: null
+     * value: "null"
      * @const
      */
-    NULL: "null"
-  };
+    "null": "null"  };
+
   /**
    * Allowed values for the <code>hatches</code> property.
    * @enum {String}
    * @readonly
    */
-  exports.HatchesEnum = { 
+  exports.HatchesEnum = {
     /**
-     * value: /
+     * value: "/"
      * @const
      */
-    _: "/",
-    
+    "/": "/",
     /**
-     * value: //
+     * value: "//"
      * @const
      */
-    _: "//",
-    
+    "//": "//",
     /**
-     * value: ///
+     * value: "///"
      * @const
      */
-    _: "///",
-    
+    "///": "///",
     /**
-     * value: \
+     * value: "\\"
      * @const
      */
-    _: "\",
-    
+    "\": "\\",
     /**
-     * value: \\
+     * value: "\\\\"
      * @const
      */
-    _: "\\",
-    
+    "\\": "\\\\",
     /**
-     * value: \\\
+     * value: "\\\\\\"
      * @const
      */
-    _: "\\\",
-    
+    "\\\": "\\\\\\",
     /**
-     * value: |
+     * value: "|"
      * @const
      */
-    _: "|",
-    
+    "|": "|",
     /**
-     * value: ||
+     * value: "||"
      * @const
      */
-    _: "||",
-    
+    "||": "||",
     /**
-     * value: |||
+     * value: "|||"
      * @const
      */
-    _: "|||",
-    
+    "|||": "|||",
     /**
-     * value: -
+     * value: "-"
      * @const
      */
-    _: "-",
-    
+    "-": "-",
     /**
-     * value: --
+     * value: "--"
      * @const
      */
-    _: "--",
-    
+    "--": "--",
     /**
-     * value: ---
+     * value: "---"
      * @const
      */
-    _: "---",
-    
+    "---": "---",
     /**
-     * value: +
+     * value: "+"
      * @const
      */
-    _: "+",
-    
+    "+": "+",
     /**
-     * value: ++
+     * value: "++"
      * @const
      */
-    _: "++",
-    
+    "++": "++",
     /**
-     * value: +++
+     * value: "+++"
      * @const
      */
-    _: "+++",
-    
+    "+++": "+++",
     /**
-     * value: x
+     * value: "x"
      * @const
      */
-    X: "x",
-    
+    "x": "x",
     /**
-     * value: xx
+     * value: "xx"
      * @const
      */
-    XX: "xx",
-    
+    "xx": "xx",
     /**
-     * value: xxx
+     * value: "xxx"
      * @const
      */
-    XXX: "xxx",
-    
+    "xxx": "xxx",
     /**
-     * value: o
+     * value: "o"
      * @const
      */
-    O: "o",
-    
+    "o": "o",
     /**
-     * value: oo
+     * value: "oo"
      * @const
      */
-    OO: "oo",
-    
+    "oo": "oo",
     /**
-     * value: ooo
+     * value: "ooo"
      * @const
      */
-    OOO: "ooo",
-    
+    "ooo": "ooo",
     /**
-     * value: O
+     * value: "O"
      * @const
      */
-    O: "O",
-    
+    "O": "O",
     /**
-     * value: OO
+     * value: "OO"
      * @const
      */
-    OO: "OO",
-    
+    "OO": "OO",
     /**
-     * value: OOO
+     * value: "OOO"
      * @const
      */
-    OOO: "OOO",
-    
+    "OOO": "OOO",
     /**
-     * value: .
+     * value: "."
      * @const
      */
-    _: ".",
-    
+    ".": ".",
     /**
-     * value: ..
+     * value: ".."
      * @const
      */
-    _: "..",
-    
+    "..": "..",
     /**
-     * value: ...
+     * value: "..."
      * @const
      */
-    _: "...",
-    
+    "...": "...",
     /**
-     * value: *
+     * value: "*"
      * @const
      */
-    _: "*",
-    
+    "*": "*",
     /**
-     * value: **
+     * value: "**"
      * @const
      */
-    _: "**",
-    
+    "**": "**",
     /**
-     * value: ***
+     * value: "***"
      * @const
      */
-    _: "***"
-  };*/
+    "***": "***"  };
+*/
   /**
    * Allowed values for the <code>linestyles</code> property.
    * @enum {String}
    * @readonly
    */
-  exports.LinestylesEnum = { 
+  exports.LinestylesEnum = {
     /**
-     * value: solid
+     * value: "solid"
      * @const
      */
-    SOLID: "solid",
-    
+    "solid": "solid",
     /**
-     * value: dashed
+     * value: "dashed"
      * @const
      */
-    DASHED: "dashed",
-    
+    "dashed": "dashed",
     /**
-     * value: dashdot
+     * value: "dashdot"
      * @const
      */
-    DASHDOT: "dashdot",
-    
+    "dashdot": "dashdot",
     /**
-     * value: dotted
+     * value: "dotted"
      * @const
      */
-    DOTTED: "dotted",
-    
+    "dotted": "dotted",
     /**
-     * value: -
+     * value: "-"
      * @const
      */
-    _: "-",
-    
+    "-": "-",
     /**
-     * value: --
+     * value: "--"
      * @const
      */
-    _: "--",
-    
+    "--": "--",
     /**
-     * value: -.
+     * value: "-."
      * @const
      */
-    _: "-.",
-    
+    "-.": "-.",
     /**
-     * value: :
+     * value: ":"
      * @const
      */
-    _: ":",
-    
+    ":": ":",
     /**
-     * value:  
+     * value: " "
      * @const
      */
-    _: " ",
-    
+    " ": " ",
     /**
-     * value: 
+     * value: ""
      * @const
      */
-    : "",
-    
+    "": "",
     /**
-     * value: null
+     * value: "null"
      * @const
      */
-    NULL: "null"
-  };*/
+    "null": "null"  };
+*/
 
   return exports;
 }));
+
+

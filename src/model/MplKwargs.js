@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -14,6 +14,9 @@
   }
 }(this, function(ApiClient) {
   'use strict';
+
+
+
 
   /**
    * The MplKwargs model module.
@@ -28,6 +31,7 @@
    * @class
    */
   var exports = function() {
+    var _this = this;
 
 
 
@@ -44,7 +48,7 @@
    * @return {module:model/MplKwargs} The populated <code>MplKwargs</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('extend')) {
@@ -66,31 +70,26 @@
     return obj;
   }
 
-
   /**
    * See \"extend\" for the LegendItem; indicates if the extend method of the legend has been set independently to the plot.
    * @member {module:model/MplKwargs.ExtendEnum} extend
    */
   exports.prototype['extend'] = undefined;
-
   /**
    * Indicates whether class breaks are separated uniformly, or in proportion to their actual value between the highest and the lowest breaks.
    * @member {module:model/MplKwargs.SpacingEnum} spacing
    */
   exports.prototype['spacing'] = undefined;
-
   /**
    * Transparency of the legend, from 0 (opaque) to 1 (transparent). Absence of this property implies full opacity.
    * @member {Number} alpha
    */
   exports.prototype['alpha'] = undefined;
-
   /**
    * Python string formatter (e.g. \"%.3f\") indicating how values in the levels should be translated into ticks. This can be used to round values for display on a legend.
    * @member {String} format
    */
   exports.prototype['format'] = undefined;
-
   /**
    * Whether edges should be drawn at colour boundaries within the legend.
    * @member {Boolean} drawedges
@@ -103,60 +102,56 @@
    * @enum {String}
    * @readonly
    */
-  exports.ExtendEnum = { 
+  exports.ExtendEnum = {
     /**
-     * value: neither
+     * value: "neither"
      * @const
      */
-    NEITHER: "neither",
-    
+    "neither": "neither",
     /**
-     * value: both
+     * value: "both"
      * @const
      */
-    BOTH: "both",
-    
+    "both": "both",
     /**
-     * value: min
+     * value: "min"
      * @const
      */
-    MIN: "min",
-    
+    "min": "min",
     /**
-     * value: max
+     * value: "max"
      * @const
      */
-    MAX: "max",
-    
+    "max": "max",
     /**
-     * value: null
+     * value: "null"
      * @const
      */
-    NULL: "null"
-  };  /**
+    "null": "null"  };
+  /**
    * Allowed values for the <code>spacing</code> property.
    * @enum {String}
    * @readonly
    */
-  exports.SpacingEnum = { 
+  exports.SpacingEnum = {
     /**
-     * value: proportional
+     * value: "proportional"
      * @const
      */
-    PROPORTIONAL: "proportional",
-    
+    "proportional": "proportional",
     /**
-     * value: uniform
+     * value: "uniform"
      * @const
      */
-    UNIFORM: "uniform",
-    
+    "uniform": "uniform",
     /**
-     * value: null
+     * value: "null"
      * @const
      */
-    NULL: "null"
-  };
+    "null": "null"  };
+
 
   return exports;
 }));
+
+

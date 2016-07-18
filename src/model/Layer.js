@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './Bounds', './Instance', './Metadata', './Resources'], factory);
+    define(['ApiClient', 'model/Bounds', 'model/Instance', 'model/Metadata', 'model/Resources'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./Bounds'), require('./Instance'), require('./Metadata'), require('./Resources'));
@@ -14,6 +14,9 @@
   }
 }(this, function(ApiClient, Bounds, Instance, Metadata, Resources) {
   'use strict';
+
+
+
 
   /**
    * The Layer model module.
@@ -28,6 +31,7 @@
    * @class
    */
   var exports = function() {
+    var _this = this;
 
 
 
@@ -44,7 +48,7 @@
    * @return {module:model/Layer} The populated <code>Layer</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
@@ -66,29 +70,24 @@
     return obj;
   }
 
-
   /**
    * Layer ID
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
-
   /**
    * A list of the instances of this layer.
    * @member {Array.<module:model/Instance>} instances
    */
   exports.prototype['instances'] = undefined;
-
   /**
    * @member {module:model/Bounds} bounds
    */
   exports.prototype['bounds'] = undefined;
-
   /**
    * @member {module:model/Metadata} meta
    */
   exports.prototype['meta'] = undefined;
-
   /**
    * @member {module:model/Resources} resources
    */
@@ -99,3 +98,5 @@
 
   return exports;
 }));
+
+

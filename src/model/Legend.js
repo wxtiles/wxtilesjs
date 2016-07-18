@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient', './LegendPlot'], factory);
+    define(['ApiClient', 'model/LegendPlot'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'), require('./LegendPlot'));
@@ -15,6 +15,9 @@
 }(this, function(ApiClient, LegendPlot) {
   'use strict';
 
+
+
+
   /**
    * The Legend model module.
    * @module model/Legend
@@ -23,11 +26,12 @@
 
   /**
    * Constructs a new <code>Legend</code>.
-   * Legend configuration for the given `plotID` (a unique identifier for a plot), derived from the respective plot configuration. A plot can consist of multiple sub-plots (e.g. a map of precipitation with a pressure overlay), only one of which will have a value associated with its key.
+   * Legend configuration for the given &#x60;plotID&#x60; (a unique identifier for a plot), derived from the respective plot configuration. A plot can consist of multiple sub-plots (e.g. a map of precipitation with a pressure overlay), only one of which will have a value associated with its key.
    * @alias module:model/Legend
    * @class
    */
   var exports = function() {
+    var _this = this;
 
 
   };
@@ -40,7 +44,7 @@
    * @return {module:model/Legend} The populated <code>Legend</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('plotID')) {
@@ -49,7 +53,6 @@
     }
     return obj;
   }
-
 
   /**
    * @member {module:model/LegendPlot} plotID
@@ -61,3 +64,5 @@
 
   return exports;
 }));
+
+

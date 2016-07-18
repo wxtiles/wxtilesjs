@@ -10,3 +10,33 @@ Name | Type | Description | Notes
 **drawedges** | **Boolean** | Whether edges should be drawn at colour boundaries within the legend. | [optional] 
 
 
+<a name="ExtendEnum"></a>
+## Enum: ExtendEnum
+
+
+* `neither` (value: `"neither"`)
+
+* `both` (value: `"both"`)
+
+* `min` (value: `"min"`)
+
+* `max` (value: `"max"`)
+
+* `null` (value: `"null"`)
+
+
+
+
+<a name="SpacingEnum"></a>
+## Enum: SpacingEnum
+
+
+* `proportional` (value: `"proportional"`)
+
+* `uniform` (value: `"uniform"`)
+
+* `null` (value: `"null"`)
+
+
+
+

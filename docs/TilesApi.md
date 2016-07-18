@@ -26,13 +26,13 @@ This endpoint provides information about an instance of a specific *Cloudburst* 
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
-var instanceId = "instanceId_example"; // {String} The id of the instance.
+var instanceId = "instanceId_example"; // String | The id of the instance.
 
 
 var callback = function(error, data, response) {
@@ -42,7 +42,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getInstance(ownerId, layerId, instanceId, , callback);
+apiInstance.getInstance(ownerId, layerId, instanceId, , callback);
 ```
 
 ### Parameters
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -72,23 +72,23 @@ No authorization required
 
 A JSON representation of the legend for PNG map tiles
 
-Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. Cloudburst internally uses this JSON representation to render the PNG version of the legend, and this endpoint is exposed to support client-side legend rendering and the interaction that implies. The size must be substituted by either `small` or `large`. The orientation must be substituted by either `horizontal` or `vertical`.
+Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. Cloudburst internally uses this JSON representation to render the PNG version of the legend, and this endpoint is exposed to support client-side legend rendering and the interaction that implies. The size must be substituted by either &#x60;small&#x60; or &#x60;large&#x60;. The orientation must be substituted by either &#x60;horizontal&#x60; or &#x60;vertical&#x60;.
 
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
-var instanceId = "instanceId_example"; // {String} The id of the instance.
+var instanceId = "instanceId_example"; // String | The id of the instance.
 
-var size = "size_example"; // {String} The size.
+var size = "size_example"; // String | The size.
 
-var orientation = "orientation_example"; // {String} The orientation.
+var orientation = "orientation_example"; // String | The orientation.
 
 
 var callback = function(error, data, response) {
@@ -98,7 +98,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getJSONLegend(ownerId, layerId, instanceId, size, orientation, callback);
+apiInstance.getJSONLegend(ownerId, layerId, instanceId, size, orientation, callback);
 ```
 
 ### Parameters
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -136,11 +136,11 @@ This endpoint provides information about a specific *Cloudburst* layer that can 
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
 
 var callback = function(error, data, response) {
@@ -150,7 +150,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getLayer(ownerId, layerId, , callback);
+apiInstance.getLayer(ownerId, layerId, , callback);
 ```
 
 ### Parameters
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -185,12 +185,12 @@ This endpoint returns information about all current *Cloudburst* layers that can
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
 var opts = { 
-  'tags': "tags_example" // {String} Filter layers by tags, separated by commas. Using multiple `tags` parameters is equivalent to an `AND` operation. For example, `tags=x,y` is `x OR y`; `tags=x&tags=y` is `x AND y`; and `tags=x,y&tags=z` is `(x OR y) AND z`
+  'tags': "tags_example" // String | Filter layers by tags, separated by commas. Using multiple `tags` parameters is equivalent to an `AND` operation. For example, `tags=x,y` is `x OR y`; `tags=x&tags=y` is `x AND y`; and `tags=x,y&tags=z` is `(x OR y) AND z`
 };
 
 var callback = function(error, data, response) {
@@ -200,7 +200,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getLayers(ownerId, , opts, callback);
+apiInstance.getLayers(ownerId, , opts, callback);
 ```
 
 ### Parameters
@@ -208,7 +208,7 @@ api.getLayers(ownerId, , opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ownerId** | **String**| The owner of the dataset. | 
- **tags** | **String**| Filter layers by tags, separated by commas. Using multiple `tags` parameters is equivalent to an `AND` operation. For example, `tags=x,y` is `x OR y`; `tags=x&amp;tags=y` is `x AND y`; and `tags=x,y&amp;tags=z` is `(x OR y) AND z` | [optional] 
+ **tags** | **String**| Filter layers by tags, separated by commas. Using multiple &#x60;tags&#x60; parameters is equivalent to an &#x60;AND&#x60; operation. For example, &#x60;tags&#x3D;x,y&#x60; is &#x60;x OR y&#x60;; &#x60;tags&#x3D;x&amp;tags&#x3D;y&#x60; is &#x60;x AND y&#x60;; and &#x60;tags&#x3D;x,y&amp;tags&#x3D;z&#x60; is &#x60;(x OR y) AND z&#x60; | [optional] 
 
 ### Return type
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -235,13 +235,13 @@ This endpoint exposes the array of vertical positions that data exists for a par
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
-var instanceId = "instanceId_example"; // {String} The id of the instance.
+var instanceId = "instanceId_example"; // String | The id of the instance.
 
 
 var callback = function(error, data, response) {
@@ -251,7 +251,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getLevels(ownerId, layerId, instanceId, , callback);
+apiInstance.getLevels(ownerId, layerId, instanceId, , callback);
 ```
 
 ### Parameters
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
@@ -281,23 +281,23 @@ No authorization required
 
 A legend for PNG map tiles
 
-Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. The size must be substituted by either `small` or `large`. The orientation must be substituted by either `horizontal` or `vertical`.
+Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. The size must be substituted by either &#x60;small&#x60; or &#x60;large&#x60;. The orientation must be substituted by either &#x60;horizontal&#x60; or &#x60;vertical&#x60;.
 
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
-var instanceId = "instanceId_example"; // {String} The id of the instance.
+var instanceId = "instanceId_example"; // String | The id of the instance.
 
-var size = "size_example"; // {String} The size.
+var size = "size_example"; // String | The size.
 
-var orientation = "orientation_example"; // {String} The orientation.
+var orientation = "orientation_example"; // String | The orientation.
 
 
 var callback = function(error, data, response) {
@@ -307,7 +307,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.getPNGLegend(ownerId, layerId, instanceId, size, orientation, callback);
+apiInstance.getPNGLegend(ownerId, layerId, instanceId, size, orientation, callback);
 ```
 
 ### Parameters
@@ -328,7 +328,7 @@ null (empty response body)
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: image/png
@@ -339,31 +339,31 @@ No authorization required
 
 A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
 
-Cloudburst produces map tiles, and PNG map tiles are the traditional format for representing these. Other possibilities include protocol-buffer vector tiles in the Mapbox vector tile specification, and others. This endpoint will most often be used by map clients (such as Leaflet, Mapbox GL JS, OpenLayers, and Google Maps), which know exactly which tiles to request for a given geographical map view and zoom level. **The Cloudburst Javascript API is responsible for completing the resource URI via these client libraries, based on what a user is authenticated to request, and what these layers support, via requests to other endpoints. Manual requests are possible but are not recommended.** The resources for a particular layer can be discovered through a `GET` request to `/layer/&lt;layerId&gt;/` and inspecting the response&#39;s `resources` property. The `/layer/&lt;layerId&gt;/&lt;instanceID&gt;/times/` endpoints can be used to request the times that are valid (many layer instances have only one time and/or vertical level).
+Cloudburst produces map tiles, and PNG map tiles are the traditional format for representing these. Other possibilities include protocol-buffer vector tiles in the Mapbox vector tile specification, and others. This endpoint will most often be used by map clients (such as Leaflet, Mapbox GL JS, OpenLayers, and Google Maps), which know exactly which tiles to request for a given geographical map view and zoom level. **The Cloudburst Javascript API is responsible for completing the resource URI via these client libraries, based on what a user is authenticated to request, and what these layers support, via requests to other endpoints. Manual requests are possible but are not recommended.** The resources for a particular layer can be discovered through a &#x60;GET&#x60; request to &#x60;/layer/&lt;layerId&gt;/&#x60; and inspecting the response&#39;s &#x60;resources&#x60; property. The &#x60;/layer/&lt;layerId&gt;/&lt;instanceID&gt;/times/&#x60; endpoints can be used to request the times that are valid (many layer instances have only one time and/or vertical level).
 
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
-var instanceId = "instanceId_example"; // {String} The id of the instance.
+var instanceId = "instanceId_example"; // String | The id of the instance.
 
-var time = new Date("2013-10-20T19:20:30+01:00"); // {Date} The time.
+var time = new Date("2013-10-20T19:20:30+01:00"); // Date | The time.
 
-var level = "level_example"; // {String} The level.
+var level = "level_example"; // String | The level.
 
-var z = 56; // {Integer} The z.
+var z = 56; // Integer | The z.
 
-var x = 56; // {Integer} The x.
+var x = 56; // Integer | The x.
 
-var y2 = 56; // {Integer} The y.
+var y2 = 56; // Integer | The y.
 
-var extension = "extension_example"; // {String} The extension.
+var extension = "extension_example"; // String | The extension.
 
 
 var callback = function(error, data, response) {
@@ -373,7 +373,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getTile(ownerId, layerId, instanceId, time, level, z, x, y2, extension, callback);
+apiInstance.getTile(ownerId, layerId, instanceId, time, level, z, x, y2, extension, callback);
 ```
 
 ### Parameters
@@ -385,9 +385,9 @@ Name | Type | Description  | Notes
  **instanceId** | **String**| The id of the instance. | 
  **time** | **Date**| The time. | 
  **level** | **String**| The level. | 
- **z** | [**Integer**](.md)| The z. | 
- **x** | [**Integer**](.md)| The x. | 
- **y2** | [**Integer**](.md)| The y. | 
+ **z** | **Integer**| The z. | 
+ **x** | **Integer**| The x. | 
+ **y2** | **Integer**| The y. | 
  **extension** | **String**| The extension. | 
 
 ### Return type
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: image/png
@@ -415,13 +415,13 @@ This endpoint exposes the array of moments that data exists for a particular ins
 ```javascript
 var WxTiles = require('wx-tiles');
 
-var apiInstance = new WxTiles.TilesApi()
+var apiInstance = new WxTiles.TilesApi();
 
-var ownerId = "ownerId_example"; // {String} The owner of the dataset.
+var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
-var layerId = "layerId_example"; // {String} The id of the layer.
+var layerId = "layerId_example"; // String | The id of the layer.
 
-var instanceId = "instanceId_example"; // {String} The id of the instance.
+var instanceId = "instanceId_example"; // String | The id of the instance.
 
 
 var callback = function(error, data, response) {
@@ -431,7 +431,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getTimes(ownerId, layerId, instanceId, , callback);
+apiInstance.getTimes(ownerId, layerId, instanceId, , callback);
 ```
 
 ### Parameters
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json

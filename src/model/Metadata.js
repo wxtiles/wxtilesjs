@@ -1,7 +1,7 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../ApiClient'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../ApiClient'));
@@ -14,6 +14,9 @@
   }
 }(this, function(ApiClient) {
   'use strict';
+
+
+
 
   /**
    * The Metadata model module.
@@ -28,6 +31,7 @@
    * @class
    */
   var exports = function() {
+    var _this = this;
 
 
 
@@ -45,7 +49,7 @@
    * @return {module:model/Metadata} The populated <code>Metadata</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('name')) {
@@ -70,36 +74,30 @@
     return obj;
   }
 
-
   /**
    * A short, human-readable description of a layer that is suitable for inclusion in a list of available layers.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
-
   /**
    * A long description of a layer, possibly including HTML tags to navigate users to glossaries or other sources of additional information.
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
-
   /**
    * Organisation responsible for publishing the data used in the layer.
    * @member {String} organisation
    */
   exports.prototype['organisation'] = undefined;
-
   /**
    * The source of the data (such as a model).
    * @member {String} source
    */
   exports.prototype['source'] = undefined;
-
   /**
    * @member {Array.<String>} regions
    */
   exports.prototype['regions'] = undefined;
-
   /**
    * The system of units that the layer renders quantitative values in. Examples include \"metric\" and \"uscs\", for layers that render with metric and United States customary system (USCS) units, respectively. A null value indicates that the unit system is unspecified or does not fit into a category (e.g. knots). This does not indicate exactly which units a plot will render, only a broad classification. This can be used to filter duplicate layers that only differ in whether they render the same physical phenomenon as, for example, millimetres or inches. There is no restriction on what value this string may take.
    * @member {String} unit_system
@@ -111,3 +109,5 @@
 
   return exports;
 }));
+
+

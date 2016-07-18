@@ -12,3 +12,20 @@ Name | Type | Description | Notes
 **linscale** | **Number** |  | [optional] 
 
 
+<a name="MethodEnum"></a>
+## Enum: MethodEnum
+
+
+* `LogNorm` (value: `"LogNorm"`)
+
+* `SymLogNorm` (value: `"SymLogNorm"`)
+
+* `PowerNorm` (value: `"PowerNorm"`)
+
+* `BoundaryNorm` (value: `"BoundaryNorm"`)
+
+* `OffsetNorm` (value: `"OffsetNorm"`)
+
+
+
+
