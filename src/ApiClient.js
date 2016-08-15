@@ -31,9 +31,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://api.wxtiles.com/
+     * @default https://api.wxtiles.com/v0
      */
-    this.basePath = 'https://api.wxtiles.com/'.replace(/\/+$/, '');
+    this.basePath = 'https://api.wxtiles.com/v0'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -128,7 +128,7 @@
   /**
    * Checks whether the given parameter value represents file-like content.
    * @param param The parameter to check.
-   * @returns {Boolean} <code>true</code> if <code>param</code> represents a file. 
+   * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
@@ -180,7 +180,7 @@
 
   /**
    * Enumeration of collection format separator strategies.
-   * @enum {String} 
+   * @enum {String}
    * @readonly
    */
   exports.CollectionFormatEnum = {
@@ -475,7 +475,7 @@
     } else {
       for (var k in data) {
         if (data.hasOwnProperty(k))
-          result[k] = exports.convertToType(data[k], itemType);
+          obj[k] = exports.convertToType(data[k], itemType);
       }
     }
   };
