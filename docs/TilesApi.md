@@ -1,6 +1,6 @@
 # WxTiles.TilesApi
 
-All URIs are relative to *https://api.wxtiles.com/*
+All URIs are relative to *https://api.wxtiles.com/v0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,19 @@ This endpoint provides information about an instance of a specific *Cloudburst* 
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -59,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -77,6 +90,19 @@ Legends are inferred from plot configurations for each layer. When a legend is d
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -117,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -135,6 +161,19 @@ This endpoint provides information about a specific *Cloudburst* layer that can 
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -166,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -184,6 +223,19 @@ This endpoint returns information about all current *Cloudburst* layers that can
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -216,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -234,6 +286,19 @@ This endpoint exposes the array of vertical positions that data exists for a par
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -268,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -286,6 +351,19 @@ Legends are inferred from plot configurations for each layer. When a legend is d
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -326,7 +404,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -344,6 +422,19 @@ Cloudburst produces map tiles, and PNG map tiles are the traditional format for 
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -396,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 
@@ -414,6 +505,19 @@ This endpoint exposes the array of moments that data exists for a particular ins
 ### Example
 ```javascript
 var WxTiles = require('wx-tiles');
+var defaultClient = WxTiles.ApiClient.default;
+
+// Configure API key authorization: apiKeyQuery
+var apiKeyQuery = defaultClient.authentications['apiKeyQuery'];
+apiKeyQuery.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyQuery.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: apiKeyHeader
+var apiKeyHeader = defaultClient.authentications['apiKeyHeader'];
+apiKeyHeader.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKeyHeader.apiKeyPrefix = 'Token';
 
 var apiInstance = new WxTiles.TilesApi();
 
@@ -448,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiKeyQuery](../README.md#apiKeyQuery), [apiKeyHeader](../README.md#apiKeyHeader)
 
 ### HTTP request headers
 

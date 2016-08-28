@@ -37,3 +37,99 @@ Name | Type | Description | Notes
 
 
 
+<a name="[HatchesEnum]"></a>
+## Enum: [HatchesEnum]
+
+
+* `/` (value: `"/"`)
+
+* `//` (value: `"//"`)
+
+* `///` (value: `"///"`)
+
+* `\` (value: `"\\"`)
+
+* `\\` (value: `"\\\\"`)
+
+* `\\\` (value: `"\\\\\\"`)
+
+* `|` (value: `"|"`)
+
+* `||` (value: `"||"`)
+
+* `|||` (value: `"|||"`)
+
+* `-` (value: `"-"`)
+
+* `--` (value: `"--"`)
+
+* `---` (value: `"---"`)
+
+* `+` (value: `"+"`)
+
+* `++` (value: `"++"`)
+
+* `+++` (value: `"+++"`)
+
+* `x` (value: `"x"`)
+
+* `xx` (value: `"xx"`)
+
+* `xxx` (value: `"xxx"`)
+
+* `o` (value: `"o"`)
+
+* `oo` (value: `"oo"`)
+
+* `ooo` (value: `"ooo"`)
+
+* `O` (value: `"O"`)
+
+* `OO` (value: `"OO"`)
+
+* `OOO` (value: `"OOO"`)
+
+* `.` (value: `"."`)
+
+* `..` (value: `".."`)
+
+* `...` (value: `"..."`)
+
+* `*` (value: `"*"`)
+
+* `**` (value: `"**"`)
+
+* `***` (value: `"***"`)
+
+
+
+
+<a name="[LinestylesEnum]"></a>
+## Enum: [LinestylesEnum]
+
+
+* `solid` (value: `"solid"`)
+
+* `dashed` (value: `"dashed"`)
+
+* `dashdot` (value: `"dashdot"`)
+
+* `dotted` (value: `"dotted"`)
+
+* `-` (value: `"-"`)
+
+* `--` (value: `"--"`)
+
+* `-.` (value: `"-."`)
+
+* `:` (value: `":"`)
+
+* ` ` (value: `" "`)
+
+* `` (value: `""`)
+
+* `null` (value: `"null"`)
+
+
+
+
