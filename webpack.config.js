@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './web-wrapper.js',
     output: {
         //Export itself to all the things (UMD).
         libraryTarget: "umd",
@@ -17,5 +17,15 @@ module.exports = {
 	},
 	node: {
 		fs: 'empty'
+	},
+	module: {
+		loaders: [
+			{
+				loader: 'babel-loader',
+				query: {
+					presets: ['es2015'],
+				}
+			}
+		]
 	}
 };
