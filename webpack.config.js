@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-	entry: './web-wrapper.js',
+	entry: './src/wrapper.js',
     output: {
         //Export itself to all the things (UMD).
         libraryTarget: "umd",
