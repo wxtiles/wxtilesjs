@@ -143,12 +143,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function (factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(2), __webpack_require__(12), __webpack_require__(13), __webpack_require__(14), __webpack_require__(17), __webpack_require__(18), __webpack_require__(20), __webpack_require__(19), __webpack_require__(24), __webpack_require__(23), __webpack_require__(15), __webpack_require__(21), __webpack_require__(22), __webpack_require__(16), __webpack_require__(25), __webpack_require__(26), __webpack_require__(27)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(2), __webpack_require__(12), __webpack_require__(13), __webpack_require__(19), __webpack_require__(24), __webpack_require__(15), __webpack_require__(14), __webpack_require__(20), __webpack_require__(21), __webpack_require__(22), __webpack_require__(16), __webpack_require__(23), __webpack_require__(18), __webpack_require__(17), __webpack_require__(25)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
 	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('./ApiClient'), require('./model/Bounds'), require('./model/Error'), require('./model/Instance'), require('./model/Layer'), require('./model/Layers'), require('./model/Legend'), require('./model/LegendItem'), require('./model/LegendPlot'), require('./model/Level'), require('./model/Levels'), require('./model/Metadata'), require('./model/MplKwargs'), require('./model/Norm'), require('./model/Resources'), require('./model/Time'), require('./model/Times'), require('./api/TilesApi'));
+	    module.exports = factory(require('./ApiClient'), require('./model/Bounds'), require('./model/Error'), require('./model/Instance'), require('./model/Layer'), require('./model/Layers'), require('./model/Level'), require('./model/Levels'), require('./model/MaxNativeZoom'), require('./model/Metadata'), require('./model/MinNativeZoom'), require('./model/PartialInstance'), require('./model/Resources'), require('./model/Time'), require('./model/Times'), require('./api/TilesApi'));
 	  }
-	})(function (ApiClient, Bounds, Error, Instance, Layer, Layers, Legend, LegendItem, LegendPlot, Level, Levels, Metadata, MplKwargs, Norm, Resources, Time, Times, TilesApi) {
+	})(function (ApiClient, Bounds, Error, Instance, Layer, Layers, Level, Levels, MaxNativeZoom, Metadata, MinNativeZoom, PartialInstance, Resources, Time, Times, TilesApi) {
 	  'use strict';
 
 	  /**
@@ -215,21 +215,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    Layers: Layers,
 	    /**
-	     * The Legend model constructor.
-	     * @property {module:model/Legend}
-	     */
-	    Legend: Legend,
-	    /**
-	     * The LegendItem model constructor.
-	     * @property {module:model/LegendItem}
-	     */
-	    LegendItem: LegendItem,
-	    /**
-	     * The LegendPlot model constructor.
-	     * @property {module:model/LegendPlot}
-	     */
-	    LegendPlot: LegendPlot,
-	    /**
 	     * The Level model constructor.
 	     * @property {module:model/Level}
 	     */
@@ -240,20 +225,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    Levels: Levels,
 	    /**
+	     * The MaxNativeZoom model constructor.
+	     * @property {module:model/MaxNativeZoom}
+	     */
+	    MaxNativeZoom: MaxNativeZoom,
+	    /**
 	     * The Metadata model constructor.
 	     * @property {module:model/Metadata}
 	     */
 	    Metadata: Metadata,
 	    /**
-	     * The MplKwargs model constructor.
-	     * @property {module:model/MplKwargs}
+	     * The MinNativeZoom model constructor.
+	     * @property {module:model/MinNativeZoom}
 	     */
-	    MplKwargs: MplKwargs,
+	    MinNativeZoom: MinNativeZoom,
 	    /**
-	     * The Norm model constructor.
-	     * @property {module:model/Norm}
+	     * The PartialInstance model constructor.
+	     * @property {module:model/PartialInstance}
 	     */
-	    Norm: Norm,
+	    PartialInstance: PartialInstance,
 	    /**
 	     * The Resources model constructor.
 	     * @property {module:model/Resources}
@@ -4399,18 +4389,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function (root, factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(14), __webpack_require__(16), __webpack_require__(17)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
 	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'));
+	    module.exports = factory(require('../ApiClient'), require('./Levels'), require('./PartialInstance'), require('./Times'));
 	  } else {
 	    // Browser globals (root is window)
 	    if (!root.WxTiles) {
 	      root.WxTiles = {};
 	    }
-	    root.WxTiles.Instance = factory(root.WxTiles.ApiClient);
+	    root.WxTiles.Instance = factory(root.WxTiles.ApiClient, root.WxTiles.Levels, root.WxTiles.PartialInstance, root.WxTiles.Times);
 	  }
-	})(undefined, function (ApiClient) {
+	})(undefined, function (ApiClient, Levels, PartialInstance, Times) {
 	  'use strict';
 
 	  /**
@@ -4421,7 +4411,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  /**
 	   * Constructs a new <code>Instance</code>.
-	   * A named instance of a dataset, typically used to represent a forecast model cycle
+	   * A named instance of a dataset, typically used to represent a forecast model cycle. Includes information on available times and vertical levels (if any).
 	   * @alias module:model/Instance
 	   * @class
 	   */
@@ -4441,42 +4431,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (data) {
 	      obj = obj || new exports();
 
-	      if (data.hasOwnProperty('id')) {
-	        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+	      if (data.hasOwnProperty('instance')) {
+	        obj['instance'] = PartialInstance.constructFromObject(data['instance']);
 	      }
-	      if (data.hasOwnProperty('created')) {
-	        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+	      if (data.hasOwnProperty('times')) {
+	        obj['times'] = Times.constructFromObject(data['times']);
 	      }
-	      if (data.hasOwnProperty('start_time')) {
-	        obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
-	      }
-	      if (data.hasOwnProperty('end_time')) {
-	        obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
+	      if (data.hasOwnProperty('levels')) {
+	        obj['levels'] = Levels.constructFromObject(data['levels']);
 	      }
 	    }
 	    return obj;
 	  };
 
 	  /**
-	   * Instance ID
-	   * @member {String} id
+	   * @member {module:model/PartialInstance} instance
 	   */
-	  exports.prototype['id'] = undefined;
+	  exports.prototype['instance'] = undefined;
 	  /**
-	   * ISO 8601 datetime string representing when the instance configuration was created
-	   * @member {String} created
+	   * @member {module:model/Times} times
 	   */
-	  exports.prototype['created'] = undefined;
+	  exports.prototype['times'] = undefined;
 	  /**
-	   * ISO 8601 datetime string representing the earliest retrievable time-step for an instance
-	   * @member {Date} start_time
+	   * @member {module:model/Levels} levels
 	   */
-	  exports.prototype['start_time'] = undefined;
-	  /**
-	   * ISO 8601 datetime string representing the latest retrievable time-step for an instance
-	   * @member {Date} end_time
-	   */
-	  exports.prototype['end_time'] = undefined;
+	  exports.prototype['levels'] = undefined;
 
 	  return exports;
 	});
@@ -4511,18 +4490,459 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function (root, factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(2), __webpack_require__(13), __webpack_require__(15), __webpack_require__(16)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(15)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
 	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('./Bounds'), require('./Instance'), require('./Metadata'), require('./Resources'));
+	    module.exports = factory(require('../ApiClient'), require('./Level'));
 	  } else {
 	    // Browser globals (root is window)
 	    if (!root.WxTiles) {
 	      root.WxTiles = {};
 	    }
-	    root.WxTiles.Layer = factory(root.WxTiles.ApiClient, root.WxTiles.Bounds, root.WxTiles.Instance, root.WxTiles.Metadata, root.WxTiles.Resources);
+	    root.WxTiles.Levels = factory(root.WxTiles.ApiClient, root.WxTiles.Level);
 	  }
-	})(undefined, function (ApiClient, Bounds, Instance, Metadata, Resources) {
+	})(undefined, function (ApiClient, Level) {
+	  'use strict';
+
+	  /**
+	   * The Levels model module.
+	   * @module model/Levels
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>Levels</code>.
+	   * @alias module:model/Levels
+	   * @class
+	   * @extends Array
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	    _this = new Array();
+	    Object.setPrototypeOf(_this, exports);
+
+	    return _this;
+	  };
+
+	  /**
+	   * Constructs a <code>Levels</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/Levels} obj Optional instance to populate.
+	   * @return {module:model/Levels} The populated <code>Levels</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+	      ApiClient.constructFromObject(data, obj, Level);
+	    }
+	    return obj;
+	  };
+
+	  return exports;
+	});
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.Level = factory(root.WxTiles.ApiClient);
+	  }
+	})(undefined, function (ApiClient) {
+	  'use strict';
+
+	  /**
+	   * The Level model module.
+	   * @module model/Level
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>Level</code>.
+	   * A potential value of a vertical dimension of an instance. Values in this array is used to substitute {level} in a tile URL.
+	   * @alias module:model/Level
+	   * @class
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	  };
+
+	  /**
+	   * Constructs a <code>Level</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/Level} obj Optional instance to populate.
+	   * @return {module:model/Level} The populated <code>Level</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+	    }
+	    return obj;
+	  };
+
+	  return exports;
+	});
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.PartialInstance = factory(root.WxTiles.ApiClient);
+	  }
+	})(undefined, function (ApiClient) {
+	  'use strict';
+
+	  /**
+	   * The PartialInstance model module.
+	   * @module model/PartialInstance
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>PartialInstance</code>.
+	   * A named instance of a dataset, typically used to represent a forecast model cycle.
+	   * @alias module:model/PartialInstance
+	   * @class
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	  };
+
+	  /**
+	   * Constructs a <code>PartialInstance</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/PartialInstance} obj Optional instance to populate.
+	   * @return {module:model/PartialInstance} The populated <code>PartialInstance</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+
+	      if (data.hasOwnProperty('id')) {
+	        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+	      }
+	      if (data.hasOwnProperty('displayName')) {
+	        obj['displayName'] = ApiClient.convertToType(data['displayName'], 'String');
+	      }
+	      if (data.hasOwnProperty('created')) {
+	        obj['created'] = ApiClient.convertToType(data['created'], 'Date');
+	      }
+	      if (data.hasOwnProperty('start')) {
+	        obj['start'] = ApiClient.convertToType(data['start'], 'Date');
+	      }
+	      if (data.hasOwnProperty('end')) {
+	        obj['end'] = ApiClient.convertToType(data['end'], 'Date');
+	      }
+	    }
+	    return obj;
+	  };
+
+	  /**
+	   * Instance ID
+	   * @member {String} id
+	   */
+	  exports.prototype['id'] = undefined;
+	  /**
+	   * Instance name, intended for display to end users
+	   * @member {String} displayName
+	   */
+	  exports.prototype['displayName'] = undefined;
+	  /**
+	   * ISO 8601 datetime string representing when the instance configuration was created
+	   * @member {Date} created
+	   */
+	  exports.prototype['created'] = undefined;
+	  /**
+	   * ISO 8601 datetime string representing the earliest retrievable time-step for an instance
+	   * @member {Date} start
+	   */
+	  exports.prototype['start'] = undefined;
+	  /**
+	   * ISO 8601 datetime string representing the latest retrievable time-step for an instance
+	   * @member {Date} end
+	   */
+	  exports.prototype['end'] = undefined;
+
+	  return exports;
+	});
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(18)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'), require('./Time'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.Times = factory(root.WxTiles.ApiClient, root.WxTiles.Time);
+	  }
+	})(undefined, function (ApiClient, Time) {
+	  'use strict';
+
+	  /**
+	   * The Times model module.
+	   * @module model/Times
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>Times</code>.
+	   * @alias module:model/Times
+	   * @class
+	   * @extends Array
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	    _this = new Array();
+	    Object.setPrototypeOf(_this, exports);
+
+	    return _this;
+	  };
+
+	  /**
+	   * Constructs a <code>Times</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/Times} obj Optional instance to populate.
+	   * @return {module:model/Times} The populated <code>Times</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+	      ApiClient.constructFromObject(data, obj, Time);
+	    }
+	    return obj;
+	  };
+
+	  return exports;
+	});
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.Time = factory(root.WxTiles.ApiClient);
+	  }
+	})(undefined, function (ApiClient) {
+	  'use strict';
+
+	  /**
+	   * The Time model module.
+	   * @module model/Time
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>Time</code>.
+	   * ISO 8601 string representing a datetime, a possible value of the temporal dimension of an instance. Values in this array is used to ubstitute \&quot;time\&quot; in a tile URL.
+	   * @alias module:model/Time
+	   * @class
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	  };
+
+	  /**
+	   * Constructs a <code>Time</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/Time} obj Optional instance to populate.
+	   * @return {module:model/Time} The populated <code>Time</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+	    }
+	    return obj;
+	  };
+
+	  return exports;
+	});
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(2), __webpack_require__(20), __webpack_require__(21), __webpack_require__(22), __webpack_require__(16), __webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'), require('./Bounds'), require('./MaxNativeZoom'), require('./Metadata'), require('./MinNativeZoom'), require('./PartialInstance'), require('./Resources'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.Layer = factory(root.WxTiles.ApiClient, root.WxTiles.Bounds, root.WxTiles.MaxNativeZoom, root.WxTiles.Metadata, root.WxTiles.MinNativeZoom, root.WxTiles.PartialInstance, root.WxTiles.Resources);
+	  }
+	})(undefined, function (ApiClient, Bounds, MaxNativeZoom, Metadata, MinNativeZoom, PartialInstance, Resources) {
 	  'use strict';
 
 	  /**
@@ -4536,10 +4956,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * A layer representing a spatial dataset that can be rendered by Cloudburst
 	   * @alias module:model/Layer
 	   * @class
+	   * @param minNativeZoom {module:model/MinNativeZoom} 
+	   * @param maxNativeZoom {module:model/MaxNativeZoom} 
 	   */
 
-	  var exports = function exports() {
+	  var exports = function exports(minNativeZoom, maxNativeZoom) {
 	    var _this = this;
+
+	    _this['minNativeZoom'] = minNativeZoom;
+	    _this['maxNativeZoom'] = maxNativeZoom;
 	  };
 
 	  /**
@@ -4557,10 +4982,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	        obj['id'] = ApiClient.convertToType(data['id'], 'String');
 	      }
 	      if (data.hasOwnProperty('instances')) {
-	        obj['instances'] = ApiClient.convertToType(data['instances'], [Instance]);
+	        obj['instances'] = ApiClient.convertToType(data['instances'], [PartialInstance]);
 	      }
 	      if (data.hasOwnProperty('bounds')) {
 	        obj['bounds'] = Bounds.constructFromObject(data['bounds']);
+	      }
+	      if (data.hasOwnProperty('instanceType')) {
+	        obj['instanceType'] = ApiClient.convertToType(data['instanceType'], 'String');
+	      }
+	      if (data.hasOwnProperty('instanceDescription')) {
+	        obj['instanceDescription'] = ApiClient.convertToType(data['instanceDescription'], 'String');
+	      }
+	      if (data.hasOwnProperty('minNativeZoom')) {
+	        obj['minNativeZoom'] = MinNativeZoom.constructFromObject(data['minNativeZoom']);
+	      }
+	      if (data.hasOwnProperty('maxNativeZoom')) {
+	        obj['maxNativeZoom'] = MaxNativeZoom.constructFromObject(data['maxNativeZoom']);
 	      }
 	      if (data.hasOwnProperty('meta')) {
 	        obj['meta'] = Metadata.constructFromObject(data['meta']);
@@ -4579,13 +5016,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	  exports.prototype['id'] = undefined;
 	  /**
 	   * A list of the instances of this layer.
-	   * @member {Array.<module:model/Instance>} instances
+	   * @member {Array.<module:model/PartialInstance>} instances
 	   */
 	  exports.prototype['instances'] = undefined;
 	  /**
 	   * @member {module:model/Bounds} bounds
 	   */
 	  exports.prototype['bounds'] = undefined;
+	  /**
+	   * One of a typology of instance types. Currently these are \"cyclic\" (for model cycles), and \"observational\" (for observational timestamps).
+	   * @member {String} instanceType
+	   */
+	  exports.prototype['instanceType'] = undefined;
+	  /**
+	   * Free-form text explaining the role of instances for the associated layer
+	   * @member {String} instanceDescription
+	   */
+	  exports.prototype['instanceDescription'] = undefined;
+	  /**
+	   * @member {module:model/MinNativeZoom} minNativeZoom
+	   */
+	  exports.prototype['minNativeZoom'] = undefined;
+	  /**
+	   * @member {module:model/MaxNativeZoom} maxNativeZoom
+	   */
+	  exports.prototype['maxNativeZoom'] = undefined;
 	  /**
 	   * @member {module:model/Metadata} meta
 	   */
@@ -4599,7 +5054,84 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 15 */
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.MaxNativeZoom = factory(root.WxTiles.ApiClient);
+	  }
+	})(undefined, function (ApiClient) {
+	  'use strict';
+
+	  /**
+	   * The MaxNativeZoom model module.
+	   * @module model/MaxNativeZoom
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>MaxNativeZoom</code>.
+	   * The largest scale supported natively by the layer.
+	   * @alias module:model/MaxNativeZoom
+	   * @class
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	  };
+
+	  /**
+	   * Constructs a <code>MaxNativeZoom</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/MaxNativeZoom} obj Optional instance to populate.
+	   * @return {module:model/MaxNativeZoom} The populated <code>MaxNativeZoom</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+	    }
+	    return obj;
+	  };
+
+	  return exports;
+	});
+
+/***/ },
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -4726,7 +5258,84 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 16 */
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	/**
+	 * WXTiles
+	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
+	 *
+	 * OpenAPI spec version: 1.2.0
+	 * 
+	 *
+	 * NOTE: This class is auto generated by the swagger code generator program.
+	 * https://github.com/swagger-api/swagger-codegen.git
+	 * Do not edit the class manually.
+	 *
+	 * Unless required by applicable law or agreed to in writing, software
+	 * distributed under the License is distributed on an "AS IS" BASIS,
+	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	 * See the License for the specific language governing permissions and
+	 * limitations under the License.
+	 */
+
+	(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as an anonymous module.
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+	    // CommonJS-like environments that support module.exports, like Node.
+	    module.exports = factory(require('../ApiClient'));
+	  } else {
+	    // Browser globals (root is window)
+	    if (!root.WxTiles) {
+	      root.WxTiles = {};
+	    }
+	    root.WxTiles.MinNativeZoom = factory(root.WxTiles.ApiClient);
+	  }
+	})(undefined, function (ApiClient) {
+	  'use strict';
+
+	  /**
+	   * The MinNativeZoom model module.
+	   * @module model/MinNativeZoom
+	   * @version 1.2.0
+	   */
+
+	  /**
+	   * Constructs a new <code>MinNativeZoom</code>.
+	   * The smallest scale supported natively by the layer.
+	   * @alias module:model/MinNativeZoom
+	   * @class
+	   */
+
+	  var exports = function exports() {
+	    var _this = this;
+	  };
+
+	  /**
+	   * Constructs a <code>MinNativeZoom</code> from a plain JavaScript object, optionally creating a new instance.
+	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+	   * @param {Object} data The plain JavaScript object bearing properties of interest.
+	   * @param {module:model/MinNativeZoom} obj Optional instance to populate.
+	   * @return {module:model/MinNativeZoom} The populated <code>MinNativeZoom</code> instance.
+	   */
+	  exports.constructFromObject = function (data, obj) {
+	    if (data) {
+	      obj = obj || new exports();
+	    }
+	    return obj;
+	  };
+
+	  return exports;
+	});
+
+/***/ },
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -4854,7 +5463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 17 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -4883,7 +5492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function (root, factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(19)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
 	    // CommonJS-like environments that support module.exports, like Node.
 	    module.exports = factory(require('../ApiClient'), require('./Layer'));
@@ -4938,1106 +5547,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 /***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(19)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('./LegendPlot'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.Legend = factory(root.WxTiles.ApiClient, root.WxTiles.LegendPlot);
-	  }
-	})(undefined, function (ApiClient, LegendPlot) {
-	  'use strict';
-
-	  /**
-	   * The Legend model module.
-	   * @module model/Legend
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>Legend</code>.
-	   * Legend configuration for the given &#x60;plotID&#x60; (a unique identifier for a plot), derived from the respective plot configuration. A plot can consist of multiple sub-plots (e.g. a map of precipitation with a pressure overlay), only one of which will have a value associated with its key.
-	   * @alias module:model/Legend
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>Legend</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/Legend} obj Optional instance to populate.
-	   * @return {module:model/Legend} The populated <code>Legend</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-
-	      if (data.hasOwnProperty('plotID')) {
-	        obj['plotID'] = LegendPlot.constructFromObject(data['plotID']);
-	      }
-	    }
-	    return obj;
-	  };
-
-	  /**
-	   * @member {module:model/LegendPlot} plotID
-	   */
-	  exports.prototype['plotID'] = undefined;
-
-	  return exports;
-	});
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(20)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('./LegendItem'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.LegendPlot = factory(root.WxTiles.ApiClient, root.WxTiles.LegendItem);
-	  }
-	})(undefined, function (ApiClient, LegendItem) {
-	  'use strict';
-
-	  /**
-	   * The LegendPlot model module.
-	   * @module model/LegendPlot
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>LegendPlot</code>.
-	   * A Matplotlib plot type (e.g. &#39;pcolormesh&#39;, &#39;contourf&#39;) as key, with the value representing the information for the legend for that particular sub-plot.
-	   * @alias module:model/LegendPlot
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>LegendPlot</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/LegendPlot} obj Optional instance to populate.
-	   * @return {module:model/LegendPlot} The populated <code>LegendPlot</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-
-	      if (data.hasOwnProperty('plotType')) {
-	        obj['plotType'] = LegendItem.constructFromObject(data['plotType']);
-	      }
-	    }
-	    return obj;
-	  };
-
-	  /**
-	   * @member {module:model/LegendItem} plotType
-	   */
-	  exports.prototype['plotType'] = undefined;
-
-	  return exports;
-	});
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(21), __webpack_require__(22)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('./MplKwargs'), require('./Norm'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.LegendItem = factory(root.WxTiles.ApiClient, root.WxTiles.MplKwargs, root.WxTiles.Norm);
-	  }
-	})(undefined, function (ApiClient, MplKwargs, Norm) {
-	  'use strict';
-
-	  /**
-	   * The LegendItem model module.
-	   * @module model/LegendItem
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>LegendItem</code>.
-	   * @alias module:model/LegendItem
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>LegendItem</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/LegendItem} obj Optional instance to populate.
-	   * @return {module:model/LegendItem} The populated <code>LegendItem</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-
-	      if (data.hasOwnProperty('cmap')) {
-	        obj['cmap'] = ApiClient.convertToType(data['cmap'], 'String');
-	      }
-	      if (data.hasOwnProperty('cmap_discrete')) {
-	        obj['cmap_discrete'] = ApiClient.convertToType(data['cmap_discrete'], ['String']);
-	      }
-	      if (data.hasOwnProperty('colors')) {
-	        obj['colors'] = ApiClient.convertToType(data['colors'], ['String']);
-	      }
-	      if (data.hasOwnProperty('extend')) {
-	        obj['extend'] = ApiClient.convertToType(data['extend'], 'String');
-	      }
-	      if (data.hasOwnProperty('hatches')) {
-	        obj['hatches'] = ApiClient.convertToType(data['hatches'], ['String']);
-	      }
-	      if (data.hasOwnProperty('levels')) {
-	        obj['levels'] = ApiClient.convertToType(data['levels'], ['Number']);
-	      }
-	      if (data.hasOwnProperty('ticks')) {
-	        obj['ticks'] = ApiClient.convertToType(data['ticks'], ['Number']);
-	      }
-	      if (data.hasOwnProperty('tick_labels')) {
-	        obj['tick_labels'] = ApiClient.convertToType(data['tick_labels'], ['String']);
-	      }
-	      if (data.hasOwnProperty('linestyles')) {
-	        obj['linestyles'] = ApiClient.convertToType(data['linestyles'], ['String']);
-	      }
-	      if (data.hasOwnProperty('linewidths')) {
-	        obj['linewidths'] = ApiClient.convertToType(data['linewidths'], ['Number']);
-	      }
-	      if (data.hasOwnProperty('norm')) {
-	        obj['norm'] = Norm.constructFromObject(data['norm']);
-	      }
-	      if (data.hasOwnProperty('unit')) {
-	        obj['unit'] = ApiClient.convertToType(data['unit'], 'String');
-	      }
-	      if (data.hasOwnProperty('vmax')) {
-	        obj['vmax'] = ApiClient.convertToType(data['vmax'], 'Number');
-	      }
-	      if (data.hasOwnProperty('vmin')) {
-	        obj['vmin'] = ApiClient.convertToType(data['vmin'], 'Number');
-	      }
-	      if (data.hasOwnProperty('mplkwargs')) {
-	        obj['mplkwargs'] = MplKwargs.constructFromObject(data['mplkwargs']);
-	      }
-	    }
-	    return obj;
-	  };
-
-	  /**
-	   * The named colourmap used by the plot. Possibly represents one of the default Matplotlib colourmaps, a cmocean Matplotlib colourmap, or a user-defined colourmap.
-	   * @member {String} cmap
-	   */
-	  exports.prototype['cmap'] = undefined;
-	  /**
-	   * A sorted array of discrete values in the colourmap. If the plot uses levels (e.g. contours), then the array will include the actual class colour. Otherwise, if the plot uses a continuous colour ramp (e.g. a pcolormesh), the array includes ten values sampled evenly between the low and the high value.
-	   * @member {Array.<String>} cmap_discrete
-	   */
-	  exports.prototype['cmap_discrete'] = undefined;
-	  /**
-	   * A sorted array of values referencing named colours for the lines in the plot (contour-style plots only). If the value is a string (rather than an array), that value applies to all lines.
-	   * @member {Array.<String>} colors
-	   */
-	  exports.prototype['colors'] = undefined;
-	  /**
-	   * Indicates whether the upper- or lower-boundary of the colourmap should be extended. Unless this is 'neither' or null, contour levels are automatically added to one or both ends of the range so that all data are included. These added ranges are then mapped to the special colormap values which default to the ends of the colormap range.
-	   * @member {module:model/LegendItem.ExtendEnum} extend
-	   */
-	  exports.prototype['extend'] = undefined;
-	  /**
-	   * Sorted array of hatch styles for the plot's levels
-	   * @member {Array.<module:model/LegendItem.HatchesEnum>} hatches
-	   */
-	  exports.prototype['hatches'] = undefined;
-	  /**
-	   * A sorted array of values in the dataset where breaks are to be drawn (e.g. contour lines)
-	   * @member {Array.<Number>} levels
-	   */
-	  exports.prototype['levels'] = undefined;
-	  /**
-	   * A sorted array of values where \"ticks\" (small leader lines) are to be drawn on the legend. With this property, some levels can be left without a tick, or ticks added between class breaks.
-	   * @member {Array.<Number>} ticks
-	   */
-	  exports.prototype['ticks'] = undefined;
-	  /**
-	   * A sorted array of values for the legend's ticks. With this property, ticks can be given non-default labels (such as human interpretations of critical numerical values).
-	   * @member {Array.<String>} tick_labels
-	   */
-	  exports.prototype['tick_labels'] = undefined;
-	  /**
-	   * A sorted array of linestyles for the plot levels
-	   * @member {Array.<module:model/LegendItem.LinestylesEnum>} linestyles
-	   */
-	  exports.prototype['linestyles'] = undefined;
-	  /**
-	   * A sorted array of linewidths for the plot levels
-	   * @member {Array.<Number>} linewidths
-	   */
-	  exports.prototype['linewidths'] = undefined;
-	  /**
-	   * @member {module:model/Norm} norm
-	   */
-	  exports.prototype['norm'] = undefined;
-	  /**
-	   * Text that is used to indicate the units on the scale; may include additional text beyond a representation of a unit (e.g. \"Low-level azimuthal shear (0.001/s)\")
-	   * @member {String} unit
-	   */
-	  exports.prototype['unit'] = undefined;
-	  /**
-	   * If present, indicates the upper colour boundary of a continuous plot (such as a pcolormesh).
-	   * @member {Number} vmax
-	   */
-	  exports.prototype['vmax'] = undefined;
-	  /**
-	   * If present, indicates the lower colour boundary of a continuous plot (such as a pcolormesh).
-	   * @member {Number} vmin
-	   */
-	  exports.prototype['vmin'] = undefined;
-	  /**
-	   * @member {module:model/MplKwargs} mplkwargs
-	   */
-	  exports.prototype['mplkwargs'] = undefined;
-
-	  /**
-	   * Allowed values for the <code>extend</code> property.
-	   * @enum {String}
-	   * @readonly
-	   */
-	  exports.ExtendEnum = {
-	    /**
-	     * value: "neither"
-	     * @const
-	     */
-	    "neither": "neither",
-	    /**
-	     * value: "both"
-	     * @const
-	     */
-	    "both": "both",
-	    /**
-	     * value: "min"
-	     * @const
-	     */
-	    "min": "min",
-	    /**
-	     * value: "max"
-	     * @const
-	     */
-	    "max": "max",
-	    /**
-	     * value: "null"
-	     * @const
-	     */
-	    "null": "null" };
-
-	  /**
-	   * Allowed values for the <code>hatches</code> property.
-	   * @enum {String}
-	   * @readonly
-	   */
-	  exports.HatchesEnum = {
-	    /**
-	     * value: "/"
-	     * @const
-	     */
-	    "/": "/",
-	    /**
-	     * value: "//"
-	     * @const
-	     */
-	    "//": "//",
-	    /**
-	     * value: "///"
-	     * @const
-	     */
-	    "///": "///",
-	    /**
-	     * value: "\\\\"
-	     * @const
-	     */
-	    "\\": "\\\\",
-	    /**
-	     * value: "\\\\\\\\"
-	     * @const
-	     */
-	    "\\\\": "\\\\\\\\",
-	    /**
-	     * value: "\\\\\\\\\\\\"
-	     * @const
-	     */
-	    "\\\\\\": "\\\\\\\\\\\\",
-	    /**
-	     * value: "|"
-	     * @const
-	     */
-	    "|": "|",
-	    /**
-	     * value: "||"
-	     * @const
-	     */
-	    "||": "||",
-	    /**
-	     * value: "|||"
-	     * @const
-	     */
-	    "|||": "|||",
-	    /**
-	     * value: "-"
-	     * @const
-	     */
-	    "-": "-",
-	    /**
-	     * value: "--"
-	     * @const
-	     */
-	    "--": "--",
-	    /**
-	     * value: "---"
-	     * @const
-	     */
-	    "---": "---",
-	    /**
-	     * value: "+"
-	     * @const
-	     */
-	    "+": "+",
-	    /**
-	     * value: "++"
-	     * @const
-	     */
-	    "++": "++",
-	    /**
-	     * value: "+++"
-	     * @const
-	     */
-	    "+++": "+++",
-	    /**
-	     * value: "x"
-	     * @const
-	     */
-	    "x": "x",
-	    /**
-	     * value: "xx"
-	     * @const
-	     */
-	    "xx": "xx",
-	    /**
-	     * value: "xxx"
-	     * @const
-	     */
-	    "xxx": "xxx",
-	    /**
-	     * value: "o"
-	     * @const
-	     */
-	    "o": "o",
-	    /**
-	     * value: "oo"
-	     * @const
-	     */
-	    "oo": "oo",
-	    /**
-	     * value: "ooo"
-	     * @const
-	     */
-	    "ooo": "ooo",
-	    /**
-	     * value: "O"
-	     * @const
-	     */
-	    "O": "O",
-	    /**
-	     * value: "OO"
-	     * @const
-	     */
-	    "OO": "OO",
-	    /**
-	     * value: "OOO"
-	     * @const
-	     */
-	    "OOO": "OOO",
-	    /**
-	     * value: "."
-	     * @const
-	     */
-	    ".": ".",
-	    /**
-	     * value: ".."
-	     * @const
-	     */
-	    "..": "..",
-	    /**
-	     * value: "..."
-	     * @const
-	     */
-	    "...": "...",
-	    /**
-	     * value: "*"
-	     * @const
-	     */
-	    "*": "*",
-	    /**
-	     * value: "**"
-	     * @const
-	     */
-	    "**": "**",
-	    /**
-	     * value: "***"
-	     * @const
-	     */
-	    "***": "***" };
-
-	  /**
-	   * Allowed values for the <code>linestyles</code> property.
-	   * @enum {String}
-	   * @readonly
-	   */
-	  exports.LinestylesEnum = {
-	    /**
-	     * value: "solid"
-	     * @const
-	     */
-	    "solid": "solid",
-	    /**
-	     * value: "dashed"
-	     * @const
-	     */
-	    "dashed": "dashed",
-	    /**
-	     * value: "dashdot"
-	     * @const
-	     */
-	    "dashdot": "dashdot",
-	    /**
-	     * value: "dotted"
-	     * @const
-	     */
-	    "dotted": "dotted",
-	    /**
-	     * value: "-"
-	     * @const
-	     */
-	    "-": "-",
-	    /**
-	     * value: "--"
-	     * @const
-	     */
-	    "--": "--",
-	    /**
-	     * value: "-."
-	     * @const
-	     */
-	    "-.": "-.",
-	    /**
-	     * value: ":"
-	     * @const
-	     */
-	    ":": ":",
-	    /**
-	     * value: " "
-	     * @const
-	     */
-	    " ": " ",
-	    /**
-	     * value: ""
-	     * @const
-	     */
-	    "": "",
-	    /**
-	     * value: "null"
-	     * @const
-	     */
-	    "null": "null" };
-
-	  return exports;
-	});
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.MplKwargs = factory(root.WxTiles.ApiClient);
-	  }
-	})(undefined, function (ApiClient) {
-	  'use strict';
-
-	  /**
-	   * The MplKwargs model module.
-	   * @module model/MplKwargs
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>MplKwargs</code>.
-	   * Additional, arbitrary Matplotlib keyword arguments. All are optional. Additional properties are possible.
-	   * @alias module:model/MplKwargs
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>MplKwargs</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/MplKwargs} obj Optional instance to populate.
-	   * @return {module:model/MplKwargs} The populated <code>MplKwargs</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-
-	      if (data.hasOwnProperty('extend')) {
-	        obj['extend'] = ApiClient.convertToType(data['extend'], 'String');
-	      }
-	      if (data.hasOwnProperty('spacing')) {
-	        obj['spacing'] = ApiClient.convertToType(data['spacing'], 'String');
-	      }
-	      if (data.hasOwnProperty('alpha')) {
-	        obj['alpha'] = ApiClient.convertToType(data['alpha'], 'Number');
-	      }
-	      if (data.hasOwnProperty('format')) {
-	        obj['format'] = ApiClient.convertToType(data['format'], 'String');
-	      }
-	      if (data.hasOwnProperty('drawedges')) {
-	        obj['drawedges'] = ApiClient.convertToType(data['drawedges'], 'Boolean');
-	      }
-	    }
-	    return obj;
-	  };
-
-	  /**
-	   * See \"extend\" for the LegendItem; indicates if the extend method of the legend has been set independently to the plot.
-	   * @member {module:model/MplKwargs.ExtendEnum} extend
-	   */
-	  exports.prototype['extend'] = undefined;
-	  /**
-	   * Indicates whether class breaks are separated uniformly, or in proportion to their actual value between the highest and the lowest breaks.
-	   * @member {module:model/MplKwargs.SpacingEnum} spacing
-	   */
-	  exports.prototype['spacing'] = undefined;
-	  /**
-	   * Transparency of the legend, from 0 (opaque) to 1 (transparent). Absence of this property implies full opacity.
-	   * @member {Number} alpha
-	   */
-	  exports.prototype['alpha'] = undefined;
-	  /**
-	   * Python string formatter (e.g. \"%.3f\") indicating how values in the levels should be translated into ticks. This can be used to round values for display on a legend.
-	   * @member {String} format
-	   */
-	  exports.prototype['format'] = undefined;
-	  /**
-	   * Whether edges should be drawn at colour boundaries within the legend.
-	   * @member {Boolean} drawedges
-	   */
-	  exports.prototype['drawedges'] = undefined;
-
-	  /**
-	   * Allowed values for the <code>extend</code> property.
-	   * @enum {String}
-	   * @readonly
-	   */
-	  exports.ExtendEnum = {
-	    /**
-	     * value: "neither"
-	     * @const
-	     */
-	    "neither": "neither",
-	    /**
-	     * value: "both"
-	     * @const
-	     */
-	    "both": "both",
-	    /**
-	     * value: "min"
-	     * @const
-	     */
-	    "min": "min",
-	    /**
-	     * value: "max"
-	     * @const
-	     */
-	    "max": "max",
-	    /**
-	     * value: "null"
-	     * @const
-	     */
-	    "null": "null" };
-
-	  /**
-	   * Allowed values for the <code>spacing</code> property.
-	   * @enum {String}
-	   * @readonly
-	   */
-	  exports.SpacingEnum = {
-	    /**
-	     * value: "proportional"
-	     * @const
-	     */
-	    "proportional": "proportional",
-	    /**
-	     * value: "uniform"
-	     * @const
-	     */
-	    "uniform": "uniform",
-	    /**
-	     * value: "null"
-	     * @const
-	     */
-	    "null": "null" };
-
-	  return exports;
-	});
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.Norm = factory(root.WxTiles.ApiClient);
-	  }
-	})(undefined, function (ApiClient) {
-	  'use strict';
-
-	  /**
-	   * The Norm model module.
-	   * @module model/Norm
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>Norm</code>.
-	   * Normalisation technique and parameters for mapping values to colours. Corresponds to valid Matplotlib colorbar normalisation methods. If not null, the only required property is \&quot;method\&quot;, with the rest depending on the normalisation technique.
-	   * @alias module:model/Norm
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>Norm</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/Norm} obj Optional instance to populate.
-	   * @return {module:model/Norm} The populated <code>Norm</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-
-	      if (data.hasOwnProperty('method')) {
-	        obj['method'] = ApiClient.convertToType(data['method'], 'String');
-	      }
-	      if (data.hasOwnProperty('vmin')) {
-	        obj['vmin'] = ApiClient.convertToType(data['vmin'], 'Number');
-	      }
-	      if (data.hasOwnProperty('vmax')) {
-	        obj['vmax'] = ApiClient.convertToType(data['vmax'], 'Number');
-	      }
-	      if (data.hasOwnProperty('clip')) {
-	        obj['clip'] = ApiClient.convertToType(data['clip'], 'Boolean');
-	      }
-	      if (data.hasOwnProperty('gamma')) {
-	        obj['gamma'] = ApiClient.convertToType(data['gamma'], 'Number');
-	      }
-	      if (data.hasOwnProperty('linthresh')) {
-	        obj['linthresh'] = ApiClient.convertToType(data['linthresh'], 'Number');
-	      }
-	      if (data.hasOwnProperty('linscale')) {
-	        obj['linscale'] = ApiClient.convertToType(data['linscale'], 'Number');
-	      }
-	    }
-	    return obj;
-	  };
-
-	  /**
-	   * Normalisation technique, corresponding to one of the Matplotlib colorbar normalisation methods.
-	   * @member {module:model/Norm.MethodEnum} method
-	   */
-	  exports.prototype['method'] = undefined;
-	  /**
-	   * @member {Number} vmin
-	   */
-	  exports.prototype['vmin'] = undefined;
-	  /**
-	   * @member {Number} vmax
-	   */
-	  exports.prototype['vmax'] = undefined;
-	  /**
-	   * @member {Boolean} clip
-	   */
-	  exports.prototype['clip'] = undefined;
-	  /**
-	   * @member {Number} gamma
-	   */
-	  exports.prototype['gamma'] = undefined;
-	  /**
-	   * @member {Number} linthresh
-	   */
-	  exports.prototype['linthresh'] = undefined;
-	  /**
-	   * @member {Number} linscale
-	   */
-	  exports.prototype['linscale'] = undefined;
-
-	  /**
-	   * Allowed values for the <code>method</code> property.
-	   * @enum {String}
-	   * @readonly
-	   */
-	  exports.MethodEnum = {
-	    /**
-	     * value: "LogNorm"
-	     * @const
-	     */
-	    "LogNorm": "LogNorm",
-	    /**
-	     * value: "SymLogNorm"
-	     * @const
-	     */
-	    "SymLogNorm": "SymLogNorm",
-	    /**
-	     * value: "PowerNorm"
-	     * @const
-	     */
-	    "PowerNorm": "PowerNorm",
-	    /**
-	     * value: "BoundaryNorm"
-	     * @const
-	     */
-	    "BoundaryNorm": "BoundaryNorm",
-	    /**
-	     * value: "OffsetNorm"
-	     * @const
-	     */
-	    "OffsetNorm": "OffsetNorm" };
-
-	  return exports;
-	});
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(24)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('./Level'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.Levels = factory(root.WxTiles.ApiClient, root.WxTiles.Level);
-	  }
-	})(undefined, function (ApiClient, Level) {
-	  'use strict';
-
-	  /**
-	   * The Levels model module.
-	   * @module model/Levels
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>Levels</code>.
-	   * @alias module:model/Levels
-	   * @class
-	   * @extends Array
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	    _this = new Array();
-	    Object.setPrototypeOf(_this, exports);
-
-	    return _this;
-	  };
-
-	  /**
-	   * Constructs a <code>Levels</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/Levels} obj Optional instance to populate.
-	   * @return {module:model/Levels} The populated <code>Levels</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-	      ApiClient.constructFromObject(data, obj, Level);
-	    }
-	    return obj;
-	  };
-
-	  return exports;
-	});
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.Level = factory(root.WxTiles.ApiClient);
-	  }
-	})(undefined, function (ApiClient) {
-	  'use strict';
-
-	  /**
-	   * The Level model module.
-	   * @module model/Level
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>Level</code>.
-	   * A potential value of a vertical dimension of an instance. Values in this array is used to substitute {level} in a tile URL.
-	   * @alias module:model/Level
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>Level</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/Level} obj Optional instance to populate.
-	   * @return {module:model/Level} The populated <code>Level</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-	    }
-	    return obj;
-	  };
-
-	  return exports;
-	});
-
-/***/ },
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -6056,85 +5565,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * https://github.com/swagger-api/swagger-codegen.git
 	 * Do not edit the class manually.
 	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.Time = factory(root.WxTiles.ApiClient);
-	  }
-	})(undefined, function (ApiClient) {
-	  'use strict';
-
-	  /**
-	   * The Time model module.
-	   * @module model/Time
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>Time</code>.
-	   * ISO 8601 string representing a datetime, a possible value of the temporal dimension of an instance. Values in this array is used to ubstitute \&quot;time\&quot; in a tile URL.
-	   * @alias module:model/Time
-	   * @class
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	  };
-
-	  /**
-	   * Constructs a <code>Time</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/Time} obj Optional instance to populate.
-	   * @return {module:model/Time} The populated <code>Time</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-	    }
-	    return obj;
-	  };
-
-	  return exports;
-	});
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
 	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
 	 * Unless required by applicable law or agreed to in writing, software
 	 * distributed under the License is distributed on an "AS IS" BASIS,
 	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -6145,101 +5576,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	(function (root, factory) {
 	  if (true) {
 	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(25)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(13), __webpack_require__(12), __webpack_require__(19), __webpack_require__(24), __webpack_require__(14), __webpack_require__(17)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
 	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('./Time'));
+	    module.exports = factory(require('../ApiClient'), require('../model/Instance'), require('../model/Error'), require('../model/Layer'), require('../model/Layers'), require('../model/Levels'), require('../model/Times'));
 	  } else {
 	    // Browser globals (root is window)
 	    if (!root.WxTiles) {
 	      root.WxTiles = {};
 	    }
-	    root.WxTiles.Times = factory(root.WxTiles.ApiClient, root.WxTiles.Time);
+	    root.WxTiles.TilesApi = factory(root.WxTiles.ApiClient, root.WxTiles.Instance, root.WxTiles.Error, root.WxTiles.Layer, root.WxTiles.Layers, root.WxTiles.Levels, root.WxTiles.Times);
 	  }
-	})(undefined, function (ApiClient, Time) {
-	  'use strict';
-
-	  /**
-	   * The Times model module.
-	   * @module model/Times
-	   * @version 1.2.0
-	   */
-
-	  /**
-	   * Constructs a new <code>Times</code>.
-	   * @alias module:model/Times
-	   * @class
-	   * @extends Array
-	   */
-
-	  var exports = function exports() {
-	    var _this = this;
-	    _this = new Array();
-	    Object.setPrototypeOf(_this, exports);
-
-	    return _this;
-	  };
-
-	  /**
-	   * Constructs a <code>Times</code> from a plain JavaScript object, optionally creating a new instance.
-	   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-	   * @param {Object} data The plain JavaScript object bearing properties of interest.
-	   * @param {module:model/Times} obj Optional instance to populate.
-	   * @return {module:model/Times} The populated <code>Times</code> instance.
-	   */
-	  exports.constructFromObject = function (data, obj) {
-	    if (data) {
-	      obj = obj || new exports();
-	      ApiClient.constructFromObject(data, obj, Time);
-	    }
-	    return obj;
-	  };
-
-	  return exports;
-	});
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
-	/**
-	 * WXTiles
-	 * Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API
-	 *
-	 * OpenAPI spec version: 1.2.0
-	 * 
-	 *
-	 * NOTE: This class is auto generated by the swagger code generator program.
-	 * https://github.com/swagger-api/swagger-codegen.git
-	 * Do not edit the class manually.
-	 *
-	 *
-	 * Unless required by applicable law or agreed to in writing, software
-	 * distributed under the License is distributed on an "AS IS" BASIS,
-	 * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	 * See the License for the specific language governing permissions and
-	 * limitations under the License.
-	 */
-
-	(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as an anonymous module.
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3), __webpack_require__(13), __webpack_require__(12), __webpack_require__(18), __webpack_require__(14), __webpack_require__(17), __webpack_require__(23), __webpack_require__(26)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-	    // CommonJS-like environments that support module.exports, like Node.
-	    module.exports = factory(require('../ApiClient'), require('../model/Instance'), require('../model/Error'), require('../model/Legend'), require('../model/Layer'), require('../model/Layers'), require('../model/Levels'), require('../model/Times'));
-	  } else {
-	    // Browser globals (root is window)
-	    if (!root.WxTiles) {
-	      root.WxTiles = {};
-	    }
-	    root.WxTiles.TilesApi = factory(root.WxTiles.ApiClient, root.WxTiles.Instance, root.WxTiles.Error, root.WxTiles.Legend, root.WxTiles.Layer, root.WxTiles.Layers, root.WxTiles.Levels, root.WxTiles.Times);
-	  }
-	})(undefined, function (ApiClient, Instance, Error, Legend, Layer, Layers, Levels, Times) {
+	})(undefined, function (ApiClient, Instance, Error, Layer, Layers, Levels, Times) {
 	  'use strict';
 
 	  /**
@@ -6309,72 +5657,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var returnType = Instance;
 
 	      return this.apiClient.callApi('/{ownerId}/layer/{layerId}/instance/{instanceId}/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, callback);
-	    };
-
-	    /**
-	     * Callback function to receive the result of the getJSONLegend operation.
-	     * @callback module:api/TilesApi~getJSONLegendCallback
-	     * @param {String} error Error message, if any.
-	     * @param {module:model/Legend} data The data returned by the service call.
-	     * @param {String} response The complete HTTP response.
-	     */
-
-	    /**
-	     * A JSON representation of the legend for PNG map tiles
-	     * Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. Cloudburst internally uses this JSON representation to render the PNG version of the legend, and this endpoint is exposed to support client-side legend rendering and the interaction that implies. The size must be substituted by either &#x60;small&#x60; or &#x60;large&#x60;. The orientation must be substituted by either &#x60;horizontal&#x60; or &#x60;vertical&#x60;.
-	     * @param {String} ownerId The owner of the dataset.
-	     * @param {String} layerId The id of the layer.
-	     * @param {String} instanceId The id of the instance.
-	     * @param {module:model/String} size The size.
-	     * @param {module:model/String} orientation The orientation.
-	     * @param {module:api/TilesApi~getJSONLegendCallback} callback The callback function, accepting three arguments: error, data, response
-	     * data is of type: {@link module:model/Legend}
-	     */
-	    this.getJSONLegend = function (ownerId, layerId, instanceId, size, orientation, callback) {
-	      var postBody = null;
-
-	      // verify the required parameter 'ownerId' is set
-	      if (ownerId == undefined || ownerId == null) {
-	        throw "Missing the required parameter 'ownerId' when calling getJSONLegend";
-	      }
-
-	      // verify the required parameter 'layerId' is set
-	      if (layerId == undefined || layerId == null) {
-	        throw "Missing the required parameter 'layerId' when calling getJSONLegend";
-	      }
-
-	      // verify the required parameter 'instanceId' is set
-	      if (instanceId == undefined || instanceId == null) {
-	        throw "Missing the required parameter 'instanceId' when calling getJSONLegend";
-	      }
-
-	      // verify the required parameter 'size' is set
-	      if (size == undefined || size == null) {
-	        throw "Missing the required parameter 'size' when calling getJSONLegend";
-	      }
-
-	      // verify the required parameter 'orientation' is set
-	      if (orientation == undefined || orientation == null) {
-	        throw "Missing the required parameter 'orientation' when calling getJSONLegend";
-	      }
-
-	      var pathParams = {
-	        'ownerId': ownerId,
-	        'layerId': layerId,
-	        'instanceId': instanceId,
-	        'size': size,
-	        'orientation': orientation
-	      };
-	      var queryParams = {};
-	      var headerParams = {};
-	      var formParams = {};
-
-	      var authNames = ['apiKeyQuery', 'apiKeyHeader'];
-	      var contentTypes = [];
-	      var accepts = ['application/json'];
-	      var returnType = Legend;
-
-	      return this.apiClient.callApi('/{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.json', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, callback);
 	    };
 
 	    /**
