@@ -20,18 +20,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Bounds', 'model/Instance', 'model/Metadata', 'model/Resources'], factory);
+    define(['ApiClient', 'model/Bounds', 'model/MaxNativeZoom', 'model/Metadata', 'model/MinNativeZoom', 'model/PartialInstance', 'model/Resources'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Bounds'), require('./Instance'), require('./Metadata'), require('./Resources'));
+    module.exports = factory(require('../ApiClient'), require('./Bounds'), require('./MaxNativeZoom'), require('./Metadata'), require('./MinNativeZoom'), require('./PartialInstance'), require('./Resources'));
   } else {
     // Browser globals (root is window)
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.Layer = factory(root.WxTiles.ApiClient, root.WxTiles.Bounds, root.WxTiles.Instance, root.WxTiles.Metadata, root.WxTiles.Resources);
+    root.WxTiles.Layer = factory(root.WxTiles.ApiClient, root.WxTiles.Bounds, root.WxTiles.MaxNativeZoom, root.WxTiles.Metadata, root.WxTiles.MinNativeZoom, root.WxTiles.PartialInstance, root.WxTiles.Resources);
   }
-}(this, function(ApiClient, Bounds, Instance, Metadata, Resources) {
+}(this, function(ApiClient, Bounds, MaxNativeZoom, Metadata, MinNativeZoom, PartialInstance, Resources) {
   'use strict';
 
 
@@ -48,13 +48,19 @@
    * A layer representing a spatial dataset that can be rendered by Cloudburst
    * @alias module:model/Layer
    * @class
+   * @param minNativeZoom {module:model/MinNativeZoom} 
+   * @param maxNativeZoom {module:model/MaxNativeZoom} 
    */
-  var exports = function() {
+  var exports = function(minNativeZoom, maxNativeZoom) {
     var _this = this;
 
 
 
 
+
+
+    _this['minNativeZoom'] = minNativeZoom;
+    _this['maxNativeZoom'] = maxNativeZoom;
 
 
   };
@@ -74,10 +80,22 @@
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
       if (data.hasOwnProperty('instances')) {
-        obj['instances'] = ApiClient.convertToType(data['instances'], [Instance]);
+        obj['instances'] = ApiClient.convertToType(data['instances'], [PartialInstance]);
       }
       if (data.hasOwnProperty('bounds')) {
         obj['bounds'] = Bounds.constructFromObject(data['bounds']);
+      }
+      if (data.hasOwnProperty('instanceType')) {
+        obj['instanceType'] = ApiClient.convertToType(data['instanceType'], 'String');
+      }
+      if (data.hasOwnProperty('instanceDescription')) {
+        obj['instanceDescription'] = ApiClient.convertToType(data['instanceDescription'], 'String');
+      }
+      if (data.hasOwnProperty('minNativeZoom')) {
+        obj['minNativeZoom'] = MinNativeZoom.constructFromObject(data['minNativeZoom']);
+      }
+      if (data.hasOwnProperty('maxNativeZoom')) {
+        obj['maxNativeZoom'] = MaxNativeZoom.constructFromObject(data['maxNativeZoom']);
       }
       if (data.hasOwnProperty('meta')) {
         obj['meta'] = Metadata.constructFromObject(data['meta']);
@@ -96,13 +114,31 @@
   exports.prototype['id'] = undefined;
   /**
    * A list of the instances of this layer.
-   * @member {Array.<module:model/Instance>} instances
+   * @member {Array.<module:model/PartialInstance>} instances
    */
   exports.prototype['instances'] = undefined;
   /**
    * @member {module:model/Bounds} bounds
    */
   exports.prototype['bounds'] = undefined;
+  /**
+   * One of a typology of instance types. Currently these are \"cyclic\" (for model cycles), and \"observational\" (for observational timestamps).
+   * @member {String} instanceType
+   */
+  exports.prototype['instanceType'] = undefined;
+  /**
+   * Free-form text explaining the role of instances for the associated layer
+   * @member {String} instanceDescription
+   */
+  exports.prototype['instanceDescription'] = undefined;
+  /**
+   * @member {module:model/MinNativeZoom} minNativeZoom
+   */
+  exports.prototype['minNativeZoom'] = undefined;
+  /**
+   * @member {module:model/MaxNativeZoom} maxNativeZoom
+   */
+  exports.prototype['maxNativeZoom'] = undefined;
   /**
    * @member {module:model/Metadata} meta
    */

@@ -20,12 +20,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Bounds', 'model/Error', 'model/Instance', 'model/Layer', 'model/Layers', 'model/Legend', 'model/LegendItem', 'model/LegendPlot', 'model/Level', 'model/Levels', 'model/Metadata', 'model/MplKwargs', 'model/Norm', 'model/Resources', 'model/Time', 'model/Times', 'api/TilesApi'], factory);
+    define(['ApiClient', 'model/Bounds', 'model/Error', 'model/Instance', 'model/Layer', 'model/Layers', 'model/Level', 'model/Levels', 'model/MaxNativeZoom', 'model/Metadata', 'model/MinNativeZoom', 'model/PartialInstance', 'model/Resources', 'model/Time', 'model/Times', 'api/TilesApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Bounds'), require('./model/Error'), require('./model/Instance'), require('./model/Layer'), require('./model/Layers'), require('./model/Legend'), require('./model/LegendItem'), require('./model/LegendPlot'), require('./model/Level'), require('./model/Levels'), require('./model/Metadata'), require('./model/MplKwargs'), require('./model/Norm'), require('./model/Resources'), require('./model/Time'), require('./model/Times'), require('./api/TilesApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Bounds'), require('./model/Error'), require('./model/Instance'), require('./model/Layer'), require('./model/Layers'), require('./model/Level'), require('./model/Levels'), require('./model/MaxNativeZoom'), require('./model/Metadata'), require('./model/MinNativeZoom'), require('./model/PartialInstance'), require('./model/Resources'), require('./model/Time'), require('./model/Times'), require('./api/TilesApi'));
   }
-}(function(ApiClient, Bounds, Error, Instance, Layer, Layers, Legend, LegendItem, LegendPlot, Level, Levels, Metadata, MplKwargs, Norm, Resources, Time, Times, TilesApi) {
+}(function(ApiClient, Bounds, Error, Instance, Layer, Layers, Level, Levels, MaxNativeZoom, Metadata, MinNativeZoom, PartialInstance, Resources, Time, Times, TilesApi) {
   'use strict';
 
   /**
@@ -91,21 +91,6 @@
      */
     Layers: Layers,
     /**
-     * The Legend model constructor.
-     * @property {module:model/Legend}
-     */
-    Legend: Legend,
-    /**
-     * The LegendItem model constructor.
-     * @property {module:model/LegendItem}
-     */
-    LegendItem: LegendItem,
-    /**
-     * The LegendPlot model constructor.
-     * @property {module:model/LegendPlot}
-     */
-    LegendPlot: LegendPlot,
-    /**
      * The Level model constructor.
      * @property {module:model/Level}
      */
@@ -116,20 +101,25 @@
      */
     Levels: Levels,
     /**
+     * The MaxNativeZoom model constructor.
+     * @property {module:model/MaxNativeZoom}
+     */
+    MaxNativeZoom: MaxNativeZoom,
+    /**
      * The Metadata model constructor.
      * @property {module:model/Metadata}
      */
     Metadata: Metadata,
     /**
-     * The MplKwargs model constructor.
-     * @property {module:model/MplKwargs}
+     * The MinNativeZoom model constructor.
+     * @property {module:model/MinNativeZoom}
      */
-    MplKwargs: MplKwargs,
+    MinNativeZoom: MinNativeZoom,
     /**
-     * The Norm model constructor.
-     * @property {module:model/Norm}
+     * The PartialInstance model constructor.
+     * @property {module:model/PartialInstance}
      */
-    Norm: Norm,
+    PartialInstance: PartialInstance,
     /**
      * The Resources model constructor.
      * @property {module:model/Resources}

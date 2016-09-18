@@ -20,18 +20,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Levels', 'model/PartialInstance', 'model/Times'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Levels'), require('./PartialInstance'), require('./Times'));
   } else {
     // Browser globals (root is window)
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.Instance = factory(root.WxTiles.ApiClient);
+    root.WxTiles.Instance = factory(root.WxTiles.ApiClient, root.WxTiles.Levels, root.WxTiles.PartialInstance, root.WxTiles.Times);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Levels, PartialInstance, Times) {
   'use strict';
 
 
@@ -45,13 +45,12 @@
 
   /**
    * Constructs a new <code>Instance</code>.
-   * A named instance of a dataset, typically used to represent a forecast model cycle
+   * A named instance of a dataset, typically used to represent a forecast model cycle. Includes information on available times and vertical levels (if any).
    * @alias module:model/Instance
    * @class
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -69,42 +68,31 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('instance')) {
+        obj['instance'] = PartialInstance.constructFromObject(data['instance']);
       }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+      if (data.hasOwnProperty('times')) {
+        obj['times'] = Times.constructFromObject(data['times']);
       }
-      if (data.hasOwnProperty('start_time')) {
-        obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
-      }
-      if (data.hasOwnProperty('end_time')) {
-        obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
+      if (data.hasOwnProperty('levels')) {
+        obj['levels'] = Levels.constructFromObject(data['levels']);
       }
     }
     return obj;
   }
 
   /**
-   * Instance ID
-   * @member {String} id
+   * @member {module:model/PartialInstance} instance
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['instance'] = undefined;
   /**
-   * ISO 8601 datetime string representing when the instance configuration was created
-   * @member {String} created
+   * @member {module:model/Times} times
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype['times'] = undefined;
   /**
-   * ISO 8601 datetime string representing the earliest retrievable time-step for an instance
-   * @member {Date} start_time
+   * @member {module:model/Levels} levels
    */
-  exports.prototype['start_time'] = undefined;
-  /**
-   * ISO 8601 datetime string representing the latest retrievable time-step for an instance
-   * @member {Date} end_time
-   */
-  exports.prototype['end_time'] = undefined;
+  exports.prototype['levels'] = undefined;
 
 
 

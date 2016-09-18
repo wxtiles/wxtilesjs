@@ -9,7 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,63 +19,55 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/LegendPlot'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./LegendPlot'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.Legend = factory(root.WxTiles.ApiClient, root.WxTiles.LegendPlot);
+    root.WxTiles.MinNativeZoom = factory(root.WxTiles.ApiClient);
   }
-}(this, function(ApiClient, LegendPlot) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The Legend model module.
-   * @module model/Legend
+   * The MinNativeZoom model module.
+   * @module model/MinNativeZoom
    * @version 1.2.0
    */
 
   /**
-   * Constructs a new <code>Legend</code>.
-   * Legend configuration for the given &#x60;plotID&#x60; (a unique identifier for a plot), derived from the respective plot configuration. A plot can consist of multiple sub-plots (e.g. a map of precipitation with a pressure overlay), only one of which will have a value associated with its key.
-   * @alias module:model/Legend
+   * Constructs a new <code>MinNativeZoom</code>.
+   * The smallest scale supported natively by the layer.
+   * @alias module:model/MinNativeZoom
    * @class
    */
   var exports = function() {
     var _this = this;
 
-
   };
 
   /**
-   * Constructs a <code>Legend</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>MinNativeZoom</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Legend} obj Optional instance to populate.
-   * @return {module:model/Legend} The populated <code>Legend</code> instance.
+   * @param {module:model/MinNativeZoom} obj Optional instance to populate.
+   * @return {module:model/MinNativeZoom} The populated <code>MinNativeZoom</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('plotID')) {
-        obj['plotID'] = LegendPlot.constructFromObject(data['plotID']);
-      }
     }
     return obj;
   }
 
-  /**
-   * @member {module:model/LegendPlot} plotID
-   */
-  exports.prototype['plotID'] = undefined;
 
 
 
