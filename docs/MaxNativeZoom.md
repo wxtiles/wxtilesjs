@@ -1,8 +1,7 @@
-# WxTiles.LegendPlot
+# WxTiles.MaxNativeZoom
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plotType** | [**LegendItem**](LegendItem.md) |  | [optional] 
 
 

@@ -9,7 +9,7 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,18 +20,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Instance', 'model/Error', 'model/Legend', 'model/Layer', 'model/Layers', 'model/Levels', 'model/Times'], factory);
+    define(['ApiClient', 'model/Instance', 'model/Error', 'model/Layer', 'model/Layers', 'model/Levels', 'model/Times'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Instance'), require('../model/Error'), require('../model/Legend'), require('../model/Layer'), require('../model/Layers'), require('../model/Levels'), require('../model/Times'));
+    module.exports = factory(require('../ApiClient'), require('../model/Instance'), require('../model/Error'), require('../model/Layer'), require('../model/Layers'), require('../model/Levels'), require('../model/Times'));
   } else {
     // Browser globals (root is window)
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.TilesApi = factory(root.WxTiles.ApiClient, root.WxTiles.Instance, root.WxTiles.Error, root.WxTiles.Legend, root.WxTiles.Layer, root.WxTiles.Layers, root.WxTiles.Levels, root.WxTiles.Times);
+    root.WxTiles.TilesApi = factory(root.WxTiles.ApiClient, root.WxTiles.Instance, root.WxTiles.Error, root.WxTiles.Layer, root.WxTiles.Layers, root.WxTiles.Levels, root.WxTiles.Times);
   }
-}(this, function(ApiClient, Instance, Error, Legend, Layer, Layers, Levels, Times) {
+}(this, function(ApiClient, Instance, Error, Layer, Layers, Levels, Times) {
   'use strict';
 
   /**
@@ -106,80 +106,6 @@
 
       return this.apiClient.callApi(
         '/{ownerId}/layer/{layerId}/instance/{instanceId}/', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the getJSONLegend operation.
-     * @callback module:api/TilesApi~getJSONLegendCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Legend} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * A JSON representation of the legend for PNG map tiles
-     * Legends are inferred from plot configurations for each layer. When a legend is disabled on a per-layer basis (or if a legend cannot be rendered due to the plot type), then this endpoint will return a 204 No Content response. Cloudburst internally uses this JSON representation to render the PNG version of the legend, and this endpoint is exposed to support client-side legend rendering and the interaction that implies. The size must be substituted by either &#x60;small&#x60; or &#x60;large&#x60;. The orientation must be substituted by either &#x60;horizontal&#x60; or &#x60;vertical&#x60;.
-     * @param {String} ownerId The owner of the dataset.
-     * @param {String} layerId The id of the layer.
-     * @param {String} instanceId The id of the instance.
-     * @param {module:model/String} size The size.
-     * @param {module:model/String} orientation The orientation.
-     * @param {module:api/TilesApi~getJSONLegendCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Legend}
-     */
-    this.getJSONLegend = function(ownerId, layerId, instanceId, size, orientation, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'ownerId' is set
-      if (ownerId == undefined || ownerId == null) {
-        throw "Missing the required parameter 'ownerId' when calling getJSONLegend";
-      }
-
-      // verify the required parameter 'layerId' is set
-      if (layerId == undefined || layerId == null) {
-        throw "Missing the required parameter 'layerId' when calling getJSONLegend";
-      }
-
-      // verify the required parameter 'instanceId' is set
-      if (instanceId == undefined || instanceId == null) {
-        throw "Missing the required parameter 'instanceId' when calling getJSONLegend";
-      }
-
-      // verify the required parameter 'size' is set
-      if (size == undefined || size == null) {
-        throw "Missing the required parameter 'size' when calling getJSONLegend";
-      }
-
-      // verify the required parameter 'orientation' is set
-      if (orientation == undefined || orientation == null) {
-        throw "Missing the required parameter 'orientation' when calling getJSONLegend";
-      }
-
-
-      var pathParams = {
-        'ownerId': ownerId,
-        'layerId': layerId,
-        'instanceId': instanceId,
-        'size': size,
-        'orientation': orientation
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['apiKeyQuery', 'apiKeyHeader'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Legend;
-
-      return this.apiClient.callApi(
-        '/{ownerId}/legend/{layerId}/{instanceId}/{size}/{orientation}.json', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
