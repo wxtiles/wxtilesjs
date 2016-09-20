@@ -18,7 +18,7 @@ api.setApiKeyQuery = (apiKey) => {
 
 //Returns the URL to pass to map libraries like leaflet.
 //Will include the apiKey query string, if set.
-api.getPNGTileURL = (ownerId, layerId, instanceId, time, level) => {
+api.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
 
 	//The dataset might not have levels.
 	if(!level) {
@@ -33,12 +33,12 @@ api.getPNGTileURL = (ownerId, layerId, instanceId, time, level) => {
 		tileURL += "?apiKey=" + api.apiClient.authentications.apiKeyQuery.apiKey;
 	}
 
-	return tileURL;
+	callback(null, tileURL);
 }
 
 //Returns the URL for the legend.
 //Will include the apiKey query string, if set.
-api.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation) => {
+api.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation, callback) => {
 
 	var urlTemplate = `/${ownerId}/legend/${layerId}/${instanceId}/${size}/${orientation}.png`
 	var legendURL = api.apiClient.basePath + urlTemplate;
@@ -48,7 +48,7 @@ api.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation) => {
 		legendURL += "?apiKey=" + api.apiClient.authentications.apiKeyQuery.apiKey;
 	}
 
-	return legendURL;
+	callback(null, legendURL);
 }
 
 //Helper function for Google Maps.

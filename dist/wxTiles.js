@@ -76,7 +76,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	//Returns the URL to pass to map libraries like leaflet.
 	//Will include the apiKey query string, if set.
-	api.getPNGTileURL = function (ownerId, layerId, instanceId, time, level) {
+	api.getPNGTileURL = function (ownerId, layerId, instanceId, time, level, callback) {
 
 		//The dataset might not have levels.
 		if (!level) {
@@ -91,12 +91,12 @@ return /******/ (function(modules) { // webpackBootstrap
 			tileURL += "?apiKey=" + api.apiClient.authentications.apiKeyQuery.apiKey;
 		}
 
-		return tileURL;
+		callback(null, tileURL);
 	};
 
 	//Returns the URL for the legend.
 	//Will include the apiKey query string, if set.
-	api.getPNGLegendURL = function (ownerId, layerId, instanceId, size, orientation) {
+	api.getPNGLegendURL = function (ownerId, layerId, instanceId, size, orientation, callback) {
 
 		var urlTemplate = "/" + ownerId + "/legend/" + layerId + "/" + instanceId + "/" + size + "/" + orientation + ".png";
 		var legendURL = api.apiClient.basePath + urlTemplate;
@@ -106,7 +106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			legendURL += "?apiKey=" + api.apiClient.authentications.apiKeyQuery.apiKey;
 		}
 
-		return legendURL;
+		callback(null, legendURL);
 	};
 
 	//Helper function for Google Maps.
@@ -4774,11 +4774,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * https://github.com/swagger-api/swagger-codegen.git
 	 * Do not edit the class manually.
 	 *
-	 * Licensed under the Apache License, Version 2.0 (the "License");
-	 * you may not use this file except in compliance with the License.
-	 * You may obtain a copy of the License at
-	 *
-	 * http://www.apache.org/licenses/LICENSE-2.0
 	 *
 	 * Unless required by applicable law or agreed to in writing, software
 	 * distributed under the License is distributed on an "AS IS" BASIS,
