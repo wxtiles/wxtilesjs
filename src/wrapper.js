@@ -36,6 +36,21 @@ api.getPNGTileURL = (ownerId, layerId, instanceId, time, level) => {
 	return tileURL;
 }
 
+//Returns the URL for the legend.
+//Will include the apiKey query string, if set.
+api.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation) => {
+
+	var urlTemplate = `/${ownerId}/legend/${layerId}/${instanceId}/${size}/${orientation}.png`
+	var legendURL = api.apiClient.basePath + urlTemplate;
+
+	//Add the apiKey to the url if it is set.
+	if(api.apiClient.authentications.apiKeyQuery.apiKey) {
+		legendURL += "?apiKey=" + api.apiClient.authentications.apiKeyQuery.apiKey;
+	}
+
+	return legendURL;
+}
+
 //Helper function for Google Maps.
 //Call this with your url and plug the returned object into google maps.
 //E.G:
