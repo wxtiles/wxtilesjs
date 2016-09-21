@@ -2,6 +2,12 @@
 
 var apiClient = require('./index.js');
 
+  /**
+   * Tiles service.
+   * @module Wrapper
+   * @version 1.2.0
+   */
+
 var api = new apiClient.TilesApi();
 
 //All following requests will have the header:
@@ -18,6 +24,25 @@ api.setApiKeyQuery = (apiKey) => {
 
 //Returns the URL to pass to map libraries like leaflet.
 //Will include the apiKey query string, if set.
+/**
+     * Callback function to receive the result of the getLayer operation.
+     * @callback module:api/TilesApi~getPNGTileURLCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Layer} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * A PNG tile URL to pass to map libraries
+     * This endpoint provides a tile url template to pass to map libraries like leaflet. 
+     * @param {String} ownerId The owner of the dataset.
+     * @param {String} layerId The id of the layer.
+		 * @param {String} instanceId The id of the instance.
+     * @param {Date} time The time.
+     * @param {String} level The level. 
+     * @param {module:api/TilesApi~getPNGTileURLCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {String}
+     */
 api.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
 
 	//The dataset might not have levels.
@@ -68,4 +93,7 @@ api.googleMaps.getImageMapType = (layerTilesUrl) => {
   })
 }
 
+/**
+ * @borrows  module:api/TilesApi#getTimes as getTimes
+ */
 module.exports = api;
