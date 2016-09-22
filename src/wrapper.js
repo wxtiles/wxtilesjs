@@ -4,46 +4,50 @@ var apiClient = require('./index.js');
 
   /**
    * Tiles service.
-   * @module Wrapper
+   * @module wrapper
    * @version 1.2.0
    */
 
 var api = new apiClient.TilesApi();
 
+/**
+ * @borrows  module:api/TilesApi#getTimes as getTimes
+ */
+module.exports = api;
+
 //All following requests will have the header:
 //apiKey: the_key 
-api.setApiKeyHeader = (apiKey) => {
+module.exports.setApiKeyHeader = (apiKey) => {
 	api.apiClient.authentications.apiKeyHeader.apiKey = apiKey;
 }
 
 //All following requests will have the query string:
 //?apiKey=the_key
-api.setApiKeyQuery = (apiKey) => {
+module.exports.setApiKeyQuery = (apiKey) => {
 	api.apiClient.authentications.apiKeyQuery.apiKey = apiKey;
 }
 
 //Returns the URL to pass to map libraries like leaflet.
 //Will include the apiKey query string, if set.
-/**
-     * Callback function to receive the result of the getLayer operation.
-     * @callback module:api/TilesApi~getPNGTileURLCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Layer} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
-    /**
-     * A PNG tile URL to pass to map libraries
-     * This endpoint provides a tile url template to pass to map libraries like leaflet. 
-     * @param {String} ownerId The owner of the dataset.
-     * @param {String} layerId The id of the layer.
-		 * @param {String} instanceId The id of the instance.
-     * @param {Date} time The time.
-     * @param {String} level The level. 
-     * @param {module:api/TilesApi~getPNGTileURLCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {String}
-     */
-api.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
+/**
+ * Callback function to receive the result of the getLayer operation.
+ * @callback module:wrapper~getPNGTileURLCallback
+ * @param {String} error Error message, if any.
+ * @param {module:model/Layer} data The data returned by the service call.
+ * @param {String} response The complete HTTP response.
+ */
+/**
+ * A PNG tile URL to pass to map libraries
+ * This endpoint provides a tile url template to pass to map libraries like leaflet.
+ * @param {String} ownerId The owner of the dataset.
+ * @param {String} layerId The id of the layer.
+ * @param {String} instanceId The id of the instance.
+ * @param {Date} time The time.
+ * @param {String} level The level. 
+ * @param {module:wrapper~getPNGTileURLCallback} callback The callback function, accepting three arguments: error, data, response
+ */
+module.exports.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
 
 	//The dataset might not have levels.
 	if(!level) {
@@ -63,7 +67,7 @@ api.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
 
 //Returns the URL for the legend.
 //Will include the apiKey query string, if set.
-api.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation, callback) => {
+module.exports.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation, callback) => {
 
 	var urlTemplate = `/${ownerId}/legend/${layerId}/${instanceId}/${size}/${orientation}.png`
 	var legendURL = api.apiClient.basePath + urlTemplate;
@@ -82,8 +86,8 @@ api.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation, callback
 //var layerTilesUrl = wxTiles.getPNGTileURL("wxtiles", "aLayer", "anInstance", "aTime", 0);
 //var mapLayer = wxTiles.google.getImageMapType(layerTilesUrl);
 //googleMap.overlayMapTypes.setAt(layerKey, mapLayer);
-api.googleMaps = {}
-api.googleMaps.getImageMapType = (layerTilesUrl) => {
+module.exports.googleMaps = {}
+module.exports.googleMaps.getImageMapType = (layerTilesUrl) => {
   return new google.maps.ImageMapType({
     getTileUrl: (coord, zoom) => {
       return layerTilesUrl.replace('{z}', zoom).replace('{x}', coord.x).replace('{y}', (Math.pow(2, zoom) - coord.y - 1));
@@ -92,8 +96,3 @@ api.googleMaps.getImageMapType = (layerTilesUrl) => {
     isPng: true
   })
 }
-
-/**
- * @borrows  module:api/TilesApi#getTimes as getTimes
- */
-module.exports = api;
