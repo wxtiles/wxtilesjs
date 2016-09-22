@@ -6,5 +6,5 @@ sudo: false
 script: bash ./deploy.sh
 env:
   global:
-  - ENCRYPTION_LABEL: "537adbb60182"
+  - ENCRYPTION_LABEL: "2ba1c9abd877"
   - COMMIT_AUTHOR_EMAIL: "wxtiles-deploy@metocean.co.nz"
