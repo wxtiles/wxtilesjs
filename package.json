@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "test": "mocha --recursive ./test/**/*.js",
-    "build": "webpack"
+    "build": "webpack",
+    "docs": "jsdoc ./src -d ./out/docs",
+    "prepare-deploy": "npm run build && npm run docs"
   },
   "dependencies": {
     "superagent": "1.7.1"
