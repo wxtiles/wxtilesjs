@@ -7,7 +7,7 @@ module.exports = {
         libraryTarget: "umd",
         //Name of the global var: "wxTiles"
         library: "wxTiles",
-		path: "./dist",
+		path: "./out/dist",
 		filename: "wxTiles.js"
     },
 	resolve: {
