@@ -2,7 +2,7 @@
   "name": "wx-tiles",
   "version": "1.2.0",
   "description": "Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API",
-  "main": "src/index.js",
+  "main": "src/wrapper.js",
   "scripts": {
     "test": "mocha --recursive ./test/**/*.js",
     "build": "webpack"
