@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --recursive ./test/**/*.js",
     "build": "webpack",
-    "docs": "jsdoc ./src -d ./out/docs",
+    "docs": "jsdoc ./src -r -d ./out/docs",
     "prepare-deploy": "npm run build && npm run docs"
   },
   "dependencies": {
