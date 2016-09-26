@@ -46,7 +46,7 @@
    * Constructs a new <code>MinNativeZoom</code>.
    * The smallest scale supported natively by the layer.
    * @alias module:model/MinNativeZoom
-   * @class
+   * @class MinNativeZoom
    */
   var exports = function() {
     var _this = this;

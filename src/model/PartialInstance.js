@@ -46,7 +46,7 @@
    * Constructs a new <code>PartialInstance</code>.
    * A named instance of a dataset, typically used to represent a forecast model cycle.
    * @alias module:model/PartialInstance
-   * @class
+   * @class PartialInstance
    */
   var exports = function() {
     var _this = this;

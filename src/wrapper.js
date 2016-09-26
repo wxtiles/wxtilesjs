@@ -9,6 +9,7 @@ var apiClient = require('./index.js');
   /**
    * Tiles service.
    * @module wxTiles
+   * @class wxTiles
    * @version 1.2.0
    * @copyright MetOcean Solutions Ltd. 2016
    */

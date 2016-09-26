@@ -47,7 +47,7 @@
    * Constructs a new <code>Metadata</code>.
    * Metadata for a layer. Cloudburst supports an arbitrary metadata document, but these specified keys are useful and will tend to exist, but none of them is mandatory, and a property may exist but have a null value.
    * @alias module:model/Metadata
-   * @class
+   * @class Metadata
    */
   var exports = function() {
     var _this = this;

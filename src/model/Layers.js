@@ -47,7 +47,7 @@
    * Constructs a new <code>Layers</code>.
    * All layers meeting your query, that that you are authenticated for, and which are currently available
    * @alias module:model/Layers
-   * @class
+   * @class Layers
    * @extends Array
    */
   var exports = function() {

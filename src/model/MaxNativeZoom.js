@@ -46,7 +46,7 @@
    * Constructs a new <code>MaxNativeZoom</code>.
    * The largest scale supported natively by the layer.
    * @alias module:model/MaxNativeZoom
-   * @class
+   * @class MaxNativeZoom
    */
   var exports = function() {
     var _this = this;

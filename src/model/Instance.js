@@ -47,7 +47,7 @@
    * Constructs a new <code>Instance</code>.
    * A named instance of a dataset, typically used to represent a forecast model cycle. Includes information on available times and vertical levels (if any).
    * @alias module:model/Instance
-   * @class
+   * @class Instance
    */
   var exports = function() {
     var _this = this;

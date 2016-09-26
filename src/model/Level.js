@@ -47,7 +47,7 @@
    * Constructs a new <code>Level</code>.
    * A potential value of a vertical dimension of an instance. Values in this array is used to substitute {level} in a tile URL.
    * @alias module:model/Level
-   * @class
+   * @class Level
    */
   var exports = function() {
     var _this = this;

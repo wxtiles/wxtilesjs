@@ -46,7 +46,7 @@
   /**
    * Constructs a new <code>Levels</code>.
    * @alias module:model/Levels
-   * @class
+   * @class Levels
    * @extends Array
    */
   var exports = function() {

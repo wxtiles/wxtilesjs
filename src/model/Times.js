@@ -46,7 +46,7 @@
   /**
    * Constructs a new <code>Times</code>.
    * @alias module:model/Times
-   * @class
+   * @class Times
    * @extends Array
    */
   var exports = function() {

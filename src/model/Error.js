@@ -46,7 +46,7 @@
   /**
    * Constructs a new <code>Error</code>.
    * @alias module:model/Error
-   * @class
+   * @class Error
    */
   var exports = function() {
     var _this = this;

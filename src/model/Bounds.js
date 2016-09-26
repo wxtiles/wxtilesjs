@@ -47,7 +47,7 @@
    * Constructs a new <code>Bounds</code>.
    * An object representing the layer instance&#39;s bounding box (derived from the dataset)
    * @alias module:model/Bounds
-   * @class
+   * @class Bounds
    */
   var exports = function() {
     var _this = this;

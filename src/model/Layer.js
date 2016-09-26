@@ -47,7 +47,7 @@
    * Constructs a new <code>Layer</code>.
    * A layer representing a spatial dataset that can be rendered by Cloudburst
    * @alias module:model/Layer
-   * @class
+   * @class Layer
    * @param minNativeZoom {module:model/MinNativeZoom} 
    * @param maxNativeZoom {module:model/MaxNativeZoom} 
    */

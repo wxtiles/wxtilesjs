@@ -47,7 +47,7 @@
    * Constructs a new <code>Time</code>.
    * ISO 8601 string representing a datetime, a possible value of the temporal dimension of an instance. Values in this array is used to ubstitute \&quot;time\&quot; in a tile URL.
    * @alias module:model/Time
-   * @class
+   * @class Time
    */
   var exports = function() {
     var _this = this;

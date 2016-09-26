@@ -47,7 +47,7 @@
    * Constructs a new <code>Resources</code>.
    * Template URLs for requesting tiles and other resources for this layer instance. Note that the tile coordinates (z, x, and y) must be given in OGC TMS, rather than the XYZ specification (see https://gist.github.com/tmcw/4954720 for the difference, which only affects the y coordinate). Not all given properties exist for all layers. The literal text \&quot;instance\&quot; (enclosed in angle brackets) must be substituted by a valid instance ID.
    * @alias module:model/Resources
-   * @class
+   * @class Resources
    */
   var exports = function() {
     var _this = this;
