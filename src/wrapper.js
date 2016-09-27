@@ -16,7 +16,7 @@ var apiClient = require('./index.js');
 var api = new apiClient.TilesApi();
 
 /**
- * @borrows  module:api/TilesApi#getLayers
+ * @borrows  module:api/TilesApi#getLayers as getLayers
  * @borrows  module:api/TilesApi#getLayer
  * @borrows  module:api/TilesApi#getInstance
  * @borrows  module:api/TilesApi#getTimes 
