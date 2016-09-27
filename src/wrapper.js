@@ -5,25 +5,20 @@
    */
 
 var apiClient = require('./index.js');
-
-  /**
-   * Tiles service.
-   * @module wxTiles
-   * @version 1.2.0
-   * @copyright MetOcean Solutions Ltd. 2016
-   */
-
 var api = new apiClient.TilesApi();
 
 /**
- * @borrows  module:api/TilesApi#getLayers
+ * Tiles service.
+ * @module wxTiles
+ * @version 1.2.0
+ * @copyright MetOcean Solutions Ltd. 2016
+ * @borrows  module:api/TilesApi#getLayers as wxTiles#getLayers
  * @borrows  module:api/TilesApi#getLayer
  * @borrows  module:api/TilesApi#getInstance
  * @borrows  module:api/TilesApi#getTimes 
  * @borrows  module:api/TilesApi#getLevels
  * @borrows  module:api/TilesApi#getPNGLegend
  * @borrows  module:api/TilesApi#getTile
-
  */
 module.exports = api;
 
