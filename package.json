@@ -6,9 +6,9 @@
   "scripts": {
     "test": "mocha --recursive ./test/**/*.js",
     "build": "webpack",
-    "docs": "mkdirp out/docs && jsdoc2md \"src/**/*.js\" > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
+    "predocs": "rimraf out/docs && mkdirp out/docs",
+    "docs": "jsdoc2md \"src/**/*.js\" > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
     "postdocs": "node ./rewriteDocs.js",
-    "docs-single": "mkdirp out/docs && jsdoc2md src/wrapper.js > ./out/docs/api.md",
     "prepare-deploy": "rimraf out && npm run build && npm run docs"
   },
   "dependencies": {
