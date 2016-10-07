@@ -1,3 +1,12 @@
+#Building wxtilesjs
+[![Build Status](https://travis-ci.org/wxtiles/wxtilesjs.svg?branch=master)](https://travis-ci.org/wxtiles/wxtilesjs)
+
+To build this repo run `npm install` followed by `npm run prepare-deploy`.  
+This will place the Webpacked JavaScript file at `out/dist/wxTiles.js` and the documention for the client library at `out/docs/wxTiles.md`.
+
+Travis will publish these files to http://js.wxtiles.com/dist/wxTiles.js and http://js.wxtiles.com/docs/wxTiles.md  
+The documentation file is used by docs.wxtiles.com and is pretty formated at http://docs.wxtiles.com/wxtilesjs-docs/
+
 # wx_tiles
 
 WxTiles - JavaScript client for wx_tiles
