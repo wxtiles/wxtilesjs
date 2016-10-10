@@ -25,6 +25,8 @@ rm -rf out/**/* || exit 0
 
 # Run our compile script
 doCompile
+#Copy the CNAME file for github pages.
+cp CNAME out/CNAME
 cd out
 git init
 
