@@ -6,10 +6,10 @@
   "scripts": {
     "test": "mocha --recursive ./test/**/*.js",
     "build": "webpack",
-    "predocs": "rimraf ./out/docs && mkdirp ./out/docs",
+    "predocs": "rimraf out/docs && mkdirp out/docs",
     "docs": "jsdoc2md \"src/**/*.js\" > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
     "postdocs": "node ./rewriteDocs.js",
-    "prepare-deploy": "npm run predocs && npm run build && npm run docs"
+    "prepare-deploy": "rimraf out && npm run build && npm run docs"
   },
   "dependencies": {
     "superagent": "1.7.1"
