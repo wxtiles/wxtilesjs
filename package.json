@@ -7,7 +7,7 @@
     "test": "mocha --recursive ./test/**/*.js",
     "build": "webpack",
     "predocs": "rimraf ./out/docs && mkdirp ./out/docs",
-    "docs": "jsdoc2md --files \"src/**/*.js\" > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
+    "docs": "jsdoc2md \"src/**/*.js\" > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
     "postdocs": "node ./rewriteDocs.js",
     "prepare-deploy": "npm run predocs && npm run build && npm run docs"
   },
