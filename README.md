@@ -16,7 +16,7 @@ Mitchell: Yeah, I'm thinking the best way might be to just have /vX/ branches an
  -->
 
 #Building wxtilesjs
-[![Build Status](https://travis-ci.org/wxtiles/wxtilesjs.svg?branch=master)](https://travis-ci.org/wxtiles/wxtilesjs)
+[![Build Status](https://travis-ci.org/wxtiles/js.svg?branch=master)](https://travis-ci.org/wxtiles/js)
 
 To build this repo run `npm install` followed by `npm run prepare-deploy`.  
 This will place the Webpacked JavaScript file at `out/dist/wxTiles.js` and the documention for the client library at `out/docs/wxTiles.md`.
