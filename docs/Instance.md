@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instance** | [**PartialInstance**](PartialInstance.md) |  | [optional] 
-**times** | [**Times**](Times.md) |  | [optional] 
-**levels** | [**Levels**](Levels.md) |  | [optional] 
+**instance** | [**PartialInstance**](PartialInstance.md) |  | 
+**times** | [**Times**](Times.md) |  | 
+**levels** | [**Levels**](Levels.md) |  | 
 
 

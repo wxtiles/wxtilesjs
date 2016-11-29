@@ -15,15 +15,15 @@ var api = new apiClient.TilesApi();
  * @borrows  module:api/TilesApi#getLayers as wxTiles#getLayers
  * @borrows  module:api/TilesApi#getLayer
  * @borrows  module:api/TilesApi#getInstance
- * @borrows  module:api/TilesApi#getTimes 
+ * @borrows  module:api/TilesApi#getTimes
  * @borrows  module:api/TilesApi#getLevels
- * @borrows  module:api/TilesApi#getPNGLegend
+ * @borrows  module:api/LegendsApi#getPNGLegend
  * @borrows  module:api/TilesApi#getTile
  */
 module.exports = api;
 
 //All following requests will have the header:
-//apiKey: the_key 
+//apiKey: the_key
 module.exports.setApiKeyHeader = (apiKey) => {
 	api.apiClient.authentications.apiKeyHeader.apiKey = apiKey;
 }
@@ -51,14 +51,19 @@ module.exports.setApiKeyQuery = (apiKey) => {
  * @param {String} layerId The id of the layer.
  * @param {String} instanceId The id of the instance.
  * @param {Date} time The time.
- * @param {String} level The level. 
+ * @param {String} level The level.
  * @param {module:wrapper~getPNGTileURLCallback} callback The callback function, accepting three arguments: error, data, response
  */
 module.exports.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
 
-	//The dataset might not have levels.
+	//The layer might not have levels.
 	if(!level) {
 		level = 0;
+	}
+
+	//The layer might not have times
+	if(!time) {
+		time = 0;
 	}
 
 	var urlTemplate = `/${ownerId}/tile/${layerId}/${instanceId}/${time}/${level}/{z}/{x}/{y}.png`

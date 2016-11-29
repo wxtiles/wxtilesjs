@@ -1,3 +1,20 @@
+<!--
+
+1) wxtiles-docs: npm run build-swagger-js-client
+2) Copy that into wxtiles/js
+3) Look at diff.
+4) Commit
+5) Travis builds and deploys
+
+If you add stuff to the api you might need to change the hand written wrapper.js
+https://github.com/wxtiles/js/blob/master/src/wrapper.js
+That file basically re-exports everything into a nicer namespace.
+The comments like `* @borrows  module:api/TilesApi#getLayer` make sure the docs have that same namespace.
+
+Mitchell: Yeah, I'm thinking the best way might be to just have /vX/ branches and make travis publish to dist/{branch}/blah.js
+
+ -->
+
 #Building wxtilesjs
 [![Build Status](https://travis-ci.org/wxtiles/wxtilesjs.svg?branch=master)](https://travis-ci.org/wxtiles/wxtilesjs)
 
@@ -143,4 +160,3 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: apikey
 - **Location**: HTTP header
-

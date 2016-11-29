@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | A short, human-readable description of a layer that is suitable for inclusion in a list of available layers. | [optional] 
 **description** | **String** | A long description of a layer, possibly including HTML tags to navigate users to glossaries or other sources of additional information. | [optional] 
+**laypersonDescription** | **String** | A long description of a layer, which is intended for display to a \&quot;layperson\&quot; who should not be confronted with technical, meteorological or other jargon when browsing layer information. | [optional] 
 **organisation** | **String** | Organisation responsible for publishing the data used in the layer. | [optional] 
 **source** | **String** | The source of the data (such as a model). | [optional] 
 **regions** | **[String]** |  | [optional] 

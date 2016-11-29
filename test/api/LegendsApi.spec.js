@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WxTiles.TilesApi();
+    instance = new WxTiles.LegendsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,61 +58,11 @@
       object[property] = value;
   }
 
-  describe('TilesApi', function() {
-    describe('getInstance', function() {
-      it('should call getInstance successfully', function(done) {
-        //uncomment below and update the code to test getInstance
-        //instance.getInstance(pet, function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getLayer', function() {
-      it('should call getLayer successfully', function(done) {
-        //uncomment below and update the code to test getLayer
-        //instance.getLayer(pet, function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getLayers', function() {
-      it('should call getLayers successfully', function(done) {
-        //uncomment below and update the code to test getLayers
-        //instance.getLayers(pet, function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getLevels', function() {
-      it('should call getLevels successfully', function(done) {
-        //uncomment below and update the code to test getLevels
-        //instance.getLevels(pet, function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getTile', function() {
-      it('should call getTile successfully', function(done) {
-        //uncomment below and update the code to test getTile
-        //instance.getTile(pet, function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getTimes', function() {
-      it('should call getTimes successfully', function(done) {
-        //uncomment below and update the code to test getTimes
-        //instance.getTimes(pet, function(error) {
+  describe('LegendsApi', function() {
+    describe('getPNGLegend', function() {
+      it('should call getPNGLegend successfully', function(done) {
+        //uncomment below and update the code to test getPNGLegend
+        //instance.getPNGLegend(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

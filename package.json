@@ -1,15 +1,15 @@
 {
   "name": "wx-tiles",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API",
   "main": "src/wrapper.js",
   "scripts": {
     "test": "mocha --recursive ./test/**/*.js",
     "build": "webpack",
-    "predocs": "rimraf out/docs && mkdirp out/docs",
-    "docs": "jsdoc2md \"src/**/*.js\" > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
+    "predocs": "rimraf ./out/docs && mkdirp ./out/docs",
+    "docs": "jsdoc2md --files ./src/**/*.js > ./out/docs/api.md --module-index-format table --member-index-format list --param-list-format table --property-list-format table",
     "postdocs": "node ./rewriteDocs.js",
-    "prepare-deploy": "rimraf out && npm run build && npm run docs"
+    "prepare-deploy": "npm run predocs && npm run build && npm run docs"
   },
   "dependencies": {
     "superagent": "1.7.1"
