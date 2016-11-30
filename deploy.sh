@@ -1,4 +1,5 @@
 #!/bin/bash
+# From https://gist.github.com/domenic/ec8b0fc8ab45f39403dd#get-encrypted-credentials
 set -e # Exit with nonzero exit code if anything fails
 
 SOURCE_BRANCH="master"
@@ -31,6 +32,12 @@ git init
 # Now let's go have some fun with the new repo
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
+
+# If there are no changes to the compiled out (e.g. this is a README update) then just bail.
+if [ -z `git diff --exit-code` ]; then
+    echo "No changes to the output on this push; exiting."
+    exit 0
+fi
 
 # Commit the "changes", i.e. the new version.
 git add -A .
