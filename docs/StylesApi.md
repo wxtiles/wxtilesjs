@@ -1,11 +1,11 @@
-# WxTiles.LegendsApi
+# WxTiles.StylesApi
 
 All URIs are relative to *http://127.16.1.15/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getJSONLegend**](LegendsApi.md#getJSONLegend) | **GET** /{ownerID}/legend/{layerId}/{styleId}.json | JSON represention of a style as implemented by a particular layer. Can be used for rendering custom a legend.
-[**getPNGLegend**](LegendsApi.md#getPNGLegend) | **GET** /{ownerId}/legend/{layerId}/{styleId}/{size}/{orientation}.png | A legend for PNG map tiles
+[**getJSONLegend**](StylesApi.md#getJSONLegend) | **GET** /{ownerID}/legend/{layerId}/{styleId}.json | JSON represention of a style as implemented by a particular layer. Can be used for rendering custom a legend.
+[**getPNGLegend**](StylesApi.md#getPNGLegend) | **GET** /{ownerId}/legend/{layerId}/{styleId}/{size}/{orientation}.png | A legend for PNG map tiles
 
 
 <a name="getJSONLegend"></a>
@@ -33,7 +33,7 @@ apiKeyHeader.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKeyHeader.apiKeyPrefix = 'Token';
 
-var apiInstance = new WxTiles.LegendsApi();
+var apiInstance = new WxTiles.StylesApi();
 
 var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
@@ -98,7 +98,7 @@ apiKeyHeader.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //apiKeyHeader.apiKeyPrefix = 'Token';
 
-var apiInstance = new WxTiles.LegendsApi();
+var apiInstance = new WxTiles.StylesApi();
 
 var ownerId = "ownerId_example"; // String | The owner of the dataset.
 

@@ -1,6 +1,6 @@
 # WxTiles.TilesApi
 
-All URIs are relative to *http://api.wxtiles.com/v0*
+All URIs are relative to *http://127.16.1.15/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getLayer**](TilesApi.md#getLayer) | **GET** /{ownerId}/layer/{layerId}/ | Information about a specific layer
 [**getLayers**](TilesApi.md#getLayers) | **GET** /{ownerId}/layer/ | Information about available WXTiles layers
 [**getLevels**](TilesApi.md#getLevels) | **GET** /{ownerId}/layer/{layerId}/instance/{instanceId}/levels/ | A collection of vertical levels for which data exists and can be requested (as tiles) for an instance of a layer.
-[**getTile**](TilesApi.md#getTile) | **GET** /{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{z}/{x}/{y}.{extension} | A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
+[**getTile**](TilesApi.md#getTile) | **GET** /{ownerId}/tile/{layerId}/{styleId}/{instanceId}/{time}/{level}/{z}/{x}/{y}.{extension} | A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
 [**getTimes**](TilesApi.md#getTimes) | **GET** /{ownerId}/layer/{layerId}/instance/{instanceId}/times/ | A collection of moments in time for which data exists and can be requested (as tiles) for an instance of a layer.
 
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 <a name="getTile"></a>
 # **getTile**
-> File getTile(ownerId, layerId, instanceId, time, level, z, x, y, extension)
+> File getTile(ownerId, layerId, styleId, instanceId, time, level, z, x, y, extension)
 
 A tiled map image, for use by map clients capable of consuming PNG map images in OGC TMS coordinate notation.
 
@@ -294,6 +294,8 @@ var ownerId = "ownerId_example"; // String | The owner of the dataset.
 
 var layerId = "layerId_example"; // String | The id of the layer.
 
+var styleId = "styleId_example"; // String | The id of the style.
+
 var instanceId = "instanceId_example"; // String | The id of the instance.
 
 var time = new Date("2013-10-20T19:20:30+01:00"); // Date | The time.
@@ -316,7 +318,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTile(ownerId, layerId, instanceId, time, level, z, x, y, extension, callback);
+apiInstance.getTile(ownerId, layerId, styleId, instanceId, time, level, z, x, y, extension, callback);
 ```
 
 ### Parameters
@@ -325,6 +327,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ownerId** | **String**| The owner of the dataset. | 
  **layerId** | **String**| The id of the layer. | 
+ **styleId** | **String**| The id of the style. | 
  **instanceId** | **String**| The id of the instance. | 
  **time** | **Date**| The time. | 
  **level** | **String**| The level. | 

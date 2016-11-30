@@ -34,7 +34,7 @@
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.Time = factory(root.WxTiles.ApiClient);
+    root.WxTiles.Region = factory(root.WxTiles.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,15 +43,15 @@
 
 
   /**
-   * The Time model module.
-   * @module model/Time
+   * The Region model module.
+   * @module model/Region
    * @version 3.0.0
    */
 
   /**
-   * Constructs a new <code>Time</code>.
-   * ISO 8601 string representing a datetime, a possible value of the temporal dimension of an instance. Values in this array is used to ubstitute &#39;time&#39; in a tile URL.
-   * @alias module:model/Time
+   * Constructs a new <code>Region</code>.
+   * A three-digit numerical code used by the Statistics Division of the United Nations Secretariat. Represents geographical regions where the layer is considered applicable, from the global scale (&#39;001&#39;), to continental, sub-continental, and country scales. See http://unstats.un.org/unsd/methods/m49/m49.htm for the list of values in current use. These are left-side zero-padded and therefore should be treated as strings and not integers.
+   * @alias module:model/Region
    * @class
    */
   var exports = function() {
@@ -60,11 +60,11 @@
   };
 
   /**
-   * Constructs a <code>Time</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Region</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Time} obj Optional instance to populate.
-   * @return {module:model/Time} The populated <code>Time</code> instance.
+   * @param {module:model/Region} obj Optional instance to populate.
+   * @return {module:model/Region} The populated <code>Region</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

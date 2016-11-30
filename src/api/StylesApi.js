@@ -34,20 +34,20 @@
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.LegendsApi = factory(root.WxTiles.ApiClient, root.WxTiles.Error);
+    root.WxTiles.StylesApi = factory(root.WxTiles.ApiClient, root.WxTiles.Error);
   }
 }(this, function(ApiClient, Error) {
   'use strict';
 
   /**
-   * Legends service.
-   * @module api/LegendsApi
+   * Styles service.
+   * @module api/StylesApi
    * @version 3.0.0
    */
 
   /**
-   * Constructs a new LegendsApi. 
-   * @alias module:api/LegendsApi
+   * Constructs a new StylesApi. 
+   * @alias module:api/StylesApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -58,7 +58,7 @@
 
     /**
      * Callback function to receive the result of the getJSONLegend operation.
-     * @callback module:api/LegendsApi~getJSONLegendCallback
+     * @callback module:api/StylesApi~getJSONLegendCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -70,7 +70,7 @@
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
      * @param {String} styleId The id of the style.
-     * @param {module:api/LegendsApi~getJSONLegendCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/StylesApi~getJSONLegendCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.getJSONLegend = function(ownerId, layerId, styleId, callback) {
       var postBody = null;
@@ -117,7 +117,7 @@
 
     /**
      * Callback function to receive the result of the getPNGLegend operation.
-     * @callback module:api/LegendsApi~getPNGLegendCallback
+     * @callback module:api/StylesApi~getPNGLegendCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -131,7 +131,7 @@
      * @param {String} styleId The id of the style.
      * @param {module:model/String} size The size.
      * @param {module:model/String} orientation The orientation.
-     * @param {module:api/LegendsApi~getPNGLegendCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/StylesApi~getPNGLegendCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.getPNGLegend = function(ownerId, layerId, styleId, size, orientation, callback) {
       var postBody = null;

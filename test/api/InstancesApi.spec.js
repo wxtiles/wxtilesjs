@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WxTiles.LegendsApi();
+    instance = new WxTiles.InstancesApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,21 +58,31 @@
       object[property] = value;
   }
 
-  describe('LegendsApi', function() {
-    describe('getPNGLegend', function() {
-      it('should call getPNGLegend successfully', function(done) {
-        //uncomment below and update the code to test getPNGLegend
-        //instance.getPNGLegend(pet, function(error) {
+  describe('InstancesApi', function() {
+    describe('getInstance', function() {
+      it('should call getInstance successfully', function(done) {
+        //uncomment below and update the code to test getInstance
+        //instance.getInstance(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('ownerIDLegendLayerIdStyleIdJsonGet', function() {
-      it('should call ownerIDLegendLayerIdStyleIdJsonGet successfully', function(done) {
-        //uncomment below and update the code to test ownerIDLegendLayerIdStyleIdJsonGet
-        //instance.ownerIDLegendLayerIdStyleIdJsonGet(pet, function(error) {
+    describe('getLevels', function() {
+      it('should call getLevels successfully', function(done) {
+        //uncomment below and update the code to test getLevels
+        //instance.getLevels(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getTimes', function() {
+      it('should call getTimes successfully', function(done) {
+        //uncomment below and update the code to test getTimes
+        //instance.getTimes(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

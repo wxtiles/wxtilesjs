@@ -34,7 +34,7 @@
     if (!root.WxTiles) {
       root.WxTiles = {};
     }
-    root.WxTiles.Time = factory(root.WxTiles.ApiClient);
+    root.WxTiles.LayerDefaults = factory(root.WxTiles.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,37 +43,47 @@
 
 
   /**
-   * The Time model module.
-   * @module model/Time
+   * The LayerDefaults model module.
+   * @module model/LayerDefaults
    * @version 3.0.0
    */
 
   /**
-   * Constructs a new <code>Time</code>.
-   * ISO 8601 string representing a datetime, a possible value of the temporal dimension of an instance. Values in this array is used to ubstitute &#39;time&#39; in a tile URL.
-   * @alias module:model/Time
+   * Constructs a new <code>LayerDefaults</code>.
+   * Default options for the layer.
+   * @alias module:model/LayerDefaults
    * @class
+   * @param style {String} ID of the default style implemented by a layer.
    */
-  var exports = function() {
+  var exports = function(style) {
     var _this = this;
 
+    _this['style'] = style;
   };
 
   /**
-   * Constructs a <code>Time</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>LayerDefaults</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Time} obj Optional instance to populate.
-   * @return {module:model/Time} The populated <code>Time</code> instance.
+   * @param {module:model/LayerDefaults} obj Optional instance to populate.
+   * @return {module:model/LayerDefaults} The populated <code>LayerDefaults</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('style')) {
+        obj['style'] = ApiClient.convertToType(data['style'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * ID of the default style implemented by a layer.
+   * @member {String} style
+   */
+  exports.prototype['style'] = undefined;
 
 
 

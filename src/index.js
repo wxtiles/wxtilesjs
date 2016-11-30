@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Bounds', 'model/Error', 'model/Instance', 'model/Layer', 'model/Layers', 'model/Level', 'model/Levels', 'model/MaxNativeZoom', 'model/Metadata', 'model/MinNativeZoom', 'model/PartialInstance', 'model/Resources', 'model/Time', 'model/Times', 'api/LegendsApi', 'api/TilesApi'], factory);
+    define(['ApiClient', 'model/Bounds', 'model/Dimension', 'model/Error', 'model/Instance', 'model/Layer', 'model/LayerDefaults', 'model/Layers', 'model/LegendResources', 'model/Level', 'model/Levels', 'model/MaxNativeZoom', 'model/MinNativeZoom', 'model/PartialInstance', 'model/Region', 'model/Resources', 'model/Style', 'model/Tag', 'model/Time', 'model/Times', 'api/InstancesApi', 'api/LayersApi', 'api/LegendsApi', 'api/LevelsApi', 'api/StylesApi', 'api/TilesApi', 'api/TimesApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Bounds'), require('./model/Error'), require('./model/Instance'), require('./model/Layer'), require('./model/Layers'), require('./model/Level'), require('./model/Levels'), require('./model/MaxNativeZoom'), require('./model/Metadata'), require('./model/MinNativeZoom'), require('./model/PartialInstance'), require('./model/Resources'), require('./model/Time'), require('./model/Times'), require('./api/LegendsApi'), require('./api/TilesApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Bounds'), require('./model/Dimension'), require('./model/Error'), require('./model/Instance'), require('./model/Layer'), require('./model/LayerDefaults'), require('./model/Layers'), require('./model/LegendResources'), require('./model/Level'), require('./model/Levels'), require('./model/MaxNativeZoom'), require('./model/MinNativeZoom'), require('./model/PartialInstance'), require('./model/Region'), require('./model/Resources'), require('./model/Style'), require('./model/Tag'), require('./model/Time'), require('./model/Times'), require('./api/InstancesApi'), require('./api/LayersApi'), require('./api/LegendsApi'), require('./api/LevelsApi'), require('./api/StylesApi'), require('./api/TilesApi'), require('./api/TimesApi'));
   }
-}(function(ApiClient, Bounds, Error, Instance, Layer, Layers, Level, Levels, MaxNativeZoom, Metadata, MinNativeZoom, PartialInstance, Resources, Time, Times, LegendsApi, TilesApi) {
+}(function(ApiClient, Bounds, Dimension, Error, Instance, Layer, LayerDefaults, Layers, LegendResources, Level, Levels, MaxNativeZoom, MinNativeZoom, PartialInstance, Region, Resources, Style, Tag, Time, Times, InstancesApi, LayersApi, LegendsApi, LevelsApi, StylesApi, TilesApi, TimesApi) {
   'use strict';
 
   /**
@@ -76,6 +76,11 @@
      */
     Bounds: Bounds,
     /**
+     * The Dimension model constructor.
+     * @property {module:model/Dimension}
+     */
+    Dimension: Dimension,
+    /**
      * The Error model constructor.
      * @property {module:model/Error}
      */
@@ -91,10 +96,20 @@
      */
     Layer: Layer,
     /**
+     * The LayerDefaults model constructor.
+     * @property {module:model/LayerDefaults}
+     */
+    LayerDefaults: LayerDefaults,
+    /**
      * The Layers model constructor.
      * @property {module:model/Layers}
      */
     Layers: Layers,
+    /**
+     * The LegendResources model constructor.
+     * @property {module:model/LegendResources}
+     */
+    LegendResources: LegendResources,
     /**
      * The Level model constructor.
      * @property {module:model/Level}
@@ -111,11 +126,6 @@
      */
     MaxNativeZoom: MaxNativeZoom,
     /**
-     * The Metadata model constructor.
-     * @property {module:model/Metadata}
-     */
-    Metadata: Metadata,
-    /**
      * The MinNativeZoom model constructor.
      * @property {module:model/MinNativeZoom}
      */
@@ -126,10 +136,25 @@
      */
     PartialInstance: PartialInstance,
     /**
+     * The Region model constructor.
+     * @property {module:model/Region}
+     */
+    Region: Region,
+    /**
      * The Resources model constructor.
      * @property {module:model/Resources}
      */
     Resources: Resources,
+    /**
+     * The Style model constructor.
+     * @property {module:model/Style}
+     */
+    Style: Style,
+    /**
+     * The Tag model constructor.
+     * @property {module:model/Tag}
+     */
+    Tag: Tag,
     /**
      * The Time model constructor.
      * @property {module:model/Time}
@@ -141,15 +166,40 @@
      */
     Times: Times,
     /**
+     * The InstancesApi service constructor.
+     * @property {module:api/InstancesApi}
+     */
+    InstancesApi: InstancesApi,
+    /**
+     * The LayersApi service constructor.
+     * @property {module:api/LayersApi}
+     */
+    LayersApi: LayersApi,
+    /**
      * The LegendsApi service constructor.
      * @property {module:api/LegendsApi}
      */
     LegendsApi: LegendsApi,
     /**
+     * The LevelsApi service constructor.
+     * @property {module:api/LevelsApi}
+     */
+    LevelsApi: LevelsApi,
+    /**
+     * The StylesApi service constructor.
+     * @property {module:api/StylesApi}
+     */
+    StylesApi: StylesApi,
+    /**
      * The TilesApi service constructor.
      * @property {module:api/TilesApi}
      */
-    TilesApi: TilesApi
+    TilesApi: TilesApi,
+    /**
+     * The TimesApi service constructor.
+     * @property {module:api/TimesApi}
+     */
+    TimesApi: TimesApi
   };
 
   return exports;

@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WxTiles.LegendsApi();
+    instance = new WxTiles.StylesApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,7 +58,7 @@
       object[property] = value;
   }
 
-  describe('LegendsApi', function() {
+  describe('StylesApi', function() {
     describe('getPNGLegend', function() {
       it('should call getPNGLegend successfully', function(done) {
         //uncomment below and update the code to test getPNGLegend

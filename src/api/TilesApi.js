@@ -288,6 +288,7 @@
      * WXTiles produces map tiles, and PNG map tiles are the traditional format for representing these. Other possibilities include protocol-buffer vector tiles in the Mapbox vector tile specification, and others. This endpoint will most often be used by map clients (such as Leaflet, Mapbox GL JS, OpenLayers, and Google Maps), which know exactly which tiles to request for a given geographical map view and zoom level. **The WXTiles Javascript API is responsible for completing the resource URI via these client libraries, based on what a user is authenticated to request, and what these layers support, via requests to other endpoints. Manual requests are possible but are not recommended.** The resources for a particular layer can be discovered through a &#x60;GET&#x60; request to &#x60;/layer/&lt;layerId&gt;/&#x60; and inspecting the response&#39;s &#x60;resources&#x60; property. The &#x60;/layer/&lt;layerId&gt;/&lt;instanceID&gt;/times/&#x60; endpoints can be used to request the times that are valid (many layer instances have only one time and/or vertical level).
      * @param {String} ownerId The owner of the dataset.
      * @param {String} layerId The id of the layer.
+     * @param {String} styleId The id of the style.
      * @param {String} instanceId The id of the instance.
      * @param {Date} time The time.
      * @param {String} level The level.
@@ -298,7 +299,7 @@
      * @param {module:api/TilesApi~getTileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link File}
      */
-    this.getTile = function(ownerId, layerId, instanceId, time, level, z, x, y, extension, callback) {
+    this.getTile = function(ownerId, layerId, styleId, instanceId, time, level, z, x, y, extension, callback) {
       var postBody = null;
 
       // verify the required parameter 'ownerId' is set
@@ -309,6 +310,11 @@
       // verify the required parameter 'layerId' is set
       if (layerId == undefined || layerId == null) {
         throw "Missing the required parameter 'layerId' when calling getTile";
+      }
+
+      // verify the required parameter 'styleId' is set
+      if (styleId == undefined || styleId == null) {
+        throw "Missing the required parameter 'styleId' when calling getTile";
       }
 
       // verify the required parameter 'instanceId' is set
@@ -350,6 +356,7 @@
       var pathParams = {
         'ownerId': ownerId,
         'layerId': layerId,
+        'styleId': styleId,
         'instanceId': instanceId,
         'time': time,
         'level': level,
@@ -371,7 +378,7 @@
       var returnType = File;
 
       return this.apiClient.callApi(
-        '/{ownerId}/tile/{layerId}/{instanceId}/{time}/{level}/{z}/{x}/{y}.{extension}', 'GET',
+        '/{ownerId}/tile/{layerId}/{styleId}/{instanceId}/{time}/{level}/{z}/{x}/{y}.{extension}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

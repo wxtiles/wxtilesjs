@@ -55,9 +55,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://api.wxtiles.com/v0
+     * @default http://127.16.1.15/v1
      */
-    this.basePath = 'http://api.wxtiles.com/v0'.replace(/\/+$/, '');
+    this.basePath = 'http://127.16.1.15/v1'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

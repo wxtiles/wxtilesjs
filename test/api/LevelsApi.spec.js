@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WxTiles.LegendsApi();
+    instance = new WxTiles.LevelsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,21 +58,11 @@
       object[property] = value;
   }
 
-  describe('LegendsApi', function() {
-    describe('getPNGLegend', function() {
-      it('should call getPNGLegend successfully', function(done) {
-        //uncomment below and update the code to test getPNGLegend
-        //instance.getPNGLegend(pet, function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('ownerIDLegendLayerIdStyleIdJsonGet', function() {
-      it('should call ownerIDLegendLayerIdStyleIdJsonGet successfully', function(done) {
-        //uncomment below and update the code to test ownerIDLegendLayerIdStyleIdJsonGet
-        //instance.ownerIDLegendLayerIdStyleIdJsonGet(pet, function(error) {
+  describe('LevelsApi', function() {
+    describe('getLevels', function() {
+      it('should call getLevels successfully', function(done) {
+        //uncomment below and update the code to test getLevels
+        //instance.getLevels(pet, function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

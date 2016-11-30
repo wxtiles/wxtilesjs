@@ -50,7 +50,7 @@
 
   /**
    * Constructs a new <code>Resources</code>.
-   * Template URLs for requesting tiles and other resources for this layer instance. Note that the tile coordinates (z, x, and y) must be given in OGC TMS, rather than the XYZ specification (see https://gist.github.com/tmcw/4954720 for the difference, which only affects the y coordinate). Not all given properties exist for all layers. The literal text \&quot;instance\&quot; (enclosed in angle brackets) must be substituted by a valid instance ID.
+   * Template URLs for requesting tiles and other resources for this layer instance. Note that the tile coordinates (z, x, and y) must be given in OGC TMS, rather than the XYZ specification (see https://gist.github.com/tmcw/4954720 for the difference, which only affects the y coordinate). Not all given properties exist for all layers. The literal text &#39;instance&#39; (enclosed in angle brackets) must be substituted by a valid instance ID.
    * @alias module:model/Resources
    * @class
    */
@@ -80,36 +80,36 @@
       if (data.hasOwnProperty('vtile')) {
         obj['vtile'] = ApiClient.convertToType(data['vtile'], 'String');
       }
-      if (data.hasOwnProperty('legend')) {
-        obj['legend'] = ApiClient.convertToType(data['legend'], 'String');
+      if (data.hasOwnProperty('times')) {
+        obj['times'] = ApiClient.convertToType(data['times'], 'String');
       }
-      if (data.hasOwnProperty('jsonlegend')) {
-        obj['jsonlegend'] = ApiClient.convertToType(data['jsonlegend'], 'String');
+      if (data.hasOwnProperty('levels')) {
+        obj['levels'] = ApiClient.convertToType(data['levels'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Template URL for requesting styled, PNG image tiles. Elements of the path enclosed in angle brackets need to be appropriately substituted when making requests.
+   * Template URL for requesting styled, PNG image tiles. Elements of the path enclosed in angle brackets need to be appropriately substituted when making requests. If not present, the layer does not support rendering as an image.
    * @member {String} tile
    */
   exports.prototype['tile'] = undefined;
   /**
-   * Template URL for requesting vector tiles in the Mapbox vector tile (MVT) specification, as protocol buffers. Elements of the path enclosed in angle brackets need to be appropriately substituted when making requests.
+   * Template URL for requesting vector tiles in the Mapbox vector tile (MVT) specification, as protocol buffers. Elements of the path enclosed in angle brackets need to be appropriately substituted when making requests. If not present, the layer does not support rendering as a vector tile.
    * @member {String} vtile
    */
   exports.prototype['vtile'] = undefined;
   /**
-   * URL for requesting legends as PNG images that correspond to the PNG image tiles. The \"size\" and \"orientation\" elements in the path (enclosed in angle brackets) need to be substituted. Valid values for size are \"small\" and \"large\". Valid values for orientation are \"horizontal\" and \"vertical\".
-   * @member {String} legend
+   * Tempalte URL for requesting available times for a layer instance. Elements of the path enclosed in angle brackets need to be appropriately substituted when making requests. If not present, the layer does not support a time dimension.
+   * @member {String} times
    */
-  exports.prototype['legend'] = undefined;
+  exports.prototype['times'] = undefined;
   /**
-   * URL for requesting legends as JSON representations. These JSON representations are used internally to construct the image versions of the legend, and can be used to render custom legends client-side. The \"size\" and \"orientation\" elements in the path (enclosed in angle brackets) need to be substituted.
-   * @member {String} jsonlegend
+   * Tempalte URL for requesting available levels for a layer instance. Elements of the path enclosed in angle brackets need to be appropriately substituted when making requests. If not present, the layer does not support a a vertical dimension.
+   * @member {String} levels
    */
-  exports.prototype['jsonlegend'] = undefined;
+  exports.prototype['levels'] = undefined;
 
 
 
