@@ -10,15 +10,16 @@ var api = new apiClient.TilesApi();
 /**
  * Tiles service.
  * @module wxTiles
- * @version 1.2.0
+ * @version 3.0.0
  * @copyright MetOcean Solutions Ltd. 2016
  * @borrows  module:api/TilesApi#getLayers as wxTiles#getLayers
  * @borrows  module:api/TilesApi#getLayer
  * @borrows  module:api/TilesApi#getInstance
  * @borrows  module:api/TilesApi#getTimes
  * @borrows  module:api/TilesApi#getLevels
- * @borrows  module:api/LegendsApi#getPNGLegend
  * @borrows  module:api/TilesApi#getTile
+ * @borrows  module:api/LegendsApi#getPNGLegend
+ * @borrows  module:api/LegendsApi#getJSONLegend
  */
 module.exports = api;
 
@@ -49,12 +50,13 @@ module.exports.setApiKeyQuery = (apiKey) => {
  * This endpoint provides a tile url template to pass to map libraries like leaflet.
  * @param {String} ownerId The owner of the dataset.
  * @param {String} layerId The id of the layer.
- * @param {String} instanceId The id of the instance.
+ * @param {String} styleId The id of a style implemented by the layer.
+ * @param {String} instanceId The id of an instance held by the layer.
  * @param {Date} time The time.
  * @param {String} level The level.
  * @param {module:wrapper~getPNGTileURLCallback} callback The callback function, accepting three arguments: error, data, response
  */
-module.exports.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callback) => {
+module.exports.getPNGTileURL = (ownerId, layerId, styleId, instanceId, time, level, callback) => {
 
 	//The layer might not have levels.
 	if(!level) {
@@ -66,7 +68,7 @@ module.exports.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callb
 		time = 0;
 	}
 
-	var urlTemplate = `/${ownerId}/tile/${layerId}/${instanceId}/${time}/${level}/{z}/{x}/{y}.png`
+	var urlTemplate = `/${ownerId}/tile/${layerId}/${styleId}/${instanceId}/${time}/${level}/{z}/{x}/{y}.png`
 	var tileURL = api.apiClient.basePath + urlTemplate;
 
 	//Add the apiKey to the url if it is set.
@@ -79,9 +81,9 @@ module.exports.getPNGTileURL = (ownerId, layerId, instanceId, time, level, callb
 
 //Returns the URL for the legend.
 //Will include the apiKey query string, if set.
-module.exports.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientation, callback) => {
+module.exports.getPNGLegendURL = (ownerId, layerId, styleId, size, orientation, callback) => {
 
-	var urlTemplate = `/${ownerId}/legend/${layerId}/${instanceId}/${size}/${orientation}.png`
+	var urlTemplate = `/${ownerId}/legend/${layerId}/${styleId}/${size}/${orientation}.png`
 	var legendURL = api.apiClient.basePath + urlTemplate;
 
 	//Add the apiKey to the url if it is set.
@@ -95,7 +97,7 @@ module.exports.getPNGLegendURL = (ownerId, layerId, instanceId, size, orientatio
 //Helper function for Google Maps.
 //Call this with your url and plug the returned object into google maps.
 //E.G:
-//var layerTilesUrl = wxTiles.getPNGTileURL("wxtiles", "aLayer", "anInstance", "aTime", 0);
+//var layerTilesUrl = wxTiles.getPNGTileURL("wxtiles", "aLayer", "aStyle", "anInstance", "aTime", 0);
 //var mapLayer = wxTiles.google.getImageMapType(layerTilesUrl);
 //googleMap.overlayMapTypes.setAt(layerKey, mapLayer);
 module.exports.googleMaps = {}

@@ -1,6 +1,8 @@
 {
   "name": "wx-tiles",
   "version": "3.0.0",
+  "repository": "https://github.com/wxtiles/v1-js",
+  "license": "MIT",
   "description": "Make and explore beautiful, rapidly-refreshed weather maps with the Cloudburst API",
   "main": "src/wrapper.js",
   "scripts": {
