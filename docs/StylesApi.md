@@ -49,16 +49,16 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.getJSONLegend(ownerId, layerId, styleId, , callback);
+apiInstance.getJSONLegend(ownerId, layerId, styleId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ownerId** | **String**| The owner of the dataset. | 
- **layerId** | **String**| The id of the layer. | 
- **styleId** | **String**| The id of the style. | 
+ **ownerId** | **String**| The owner of the dataset. |
+ **layerId** | **String**| The id of the layer. |
+ **styleId** | **String**| The id of the style. |
 
 ### Return type
 
@@ -125,11 +125,11 @@ apiInstance.getPNGLegend(ownerId, layerId, styleId, size, orientation, callback)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ownerId** | **String**| The owner of the dataset. | 
- **layerId** | **String**| The id of the layer. | 
- **styleId** | **String**| The id of the style. | 
- **size** | **String**| The size. | 
- **orientation** | **String**| The orientation. | 
+ **ownerId** | **String**| The owner of the dataset. |
+ **layerId** | **String**| The id of the layer. |
+ **styleId** | **String**| The id of the style. |
+ **size** | **String**| The size. |
+ **orientation** | **String**| The orientation. |
 
 ### Return type
 
@@ -143,4 +143,3 @@ null (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: image/png
-
