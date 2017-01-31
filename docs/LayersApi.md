@@ -1,6 +1,6 @@
 # WxTiles.LayersApi
 
-All URIs are relative to *http://127.16.1.15/v1*
+All URIs are relative to *http://172.16.1.50/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -11,7 +11,7 @@ https://github.com/wxtiles/js/blob/master/src/wrapper.js
 That file basically re-exports everything into a nicer namespace.
 The comments like `* @borrows  module:api/TilesApi#getLayer` make sure the docs have that same namespace.
 
-Mitchell: Yeah, I'm thinking the best way might be to just have /vX/ branches and make travis publish to dist/{branch}/blah.js
+The best way might be to just have /vX/ branches and make travis publish to dist/{branch}/blah.js
 
  -->
 
@@ -19,9 +19,9 @@ Mitchell: Yeah, I'm thinking the best way might be to just have /vX/ branches an
 [![Build Status](https://travis-ci.org/wxtiles/js.svg?branch=master)](https://travis-ci.org/wxtiles/js)
 
 To build this repo run `npm install` followed by `npm run prepare-deploy`.  
-This will place the Webpacked JavaScript file at `out/dist/wxTiles.js` and the documention for the client library at `out/docs/wxTiles.md`.
+This will place the Webpacked JavaScript file at `out/dist/wxTiles.js` and the documentation for the client library at `out/docs/wxTiles.md`.
 
-Travis will publish these files to https://wxtiles.github.io/v1-js/dist/wxTiles.js and https://wxtiles.github.io/v1-js/docs/wxTiles.md  
+Travis will publish these files to https://wxtiles.github.io/js/dist/wxTiles.js and https://wxtiles.github.io/js/docs/wxTiles.md  
 The documentation file is used by docs.wxtiles.com and is pretty formated at http://docs.wxtiles.com/wxtilesjs-docs/
 
 # wx_tiles
@@ -115,7 +115,7 @@ api.getInstance(ownerId, layerId, instanceId, , callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://127.16.1.15/v1*
+All URIs are relative to *http://172.16.1.50/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
