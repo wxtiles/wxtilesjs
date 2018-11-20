@@ -1,3 +1,4 @@
+**This package is no longer maintained.**
 <!--
 
 1) wxtiles-docs: npm run build-swagger-js-client
@@ -15,7 +16,7 @@ The best way might be to just have /vX/ branches and make travis publish to dist
 
  -->
 
-#Building wxtilesjs
+# Building wxtilesjs
 [![Build Status](https://travis-ci.org/wxtiles/js.svg?branch=master)](https://travis-ci.org/wxtiles/js)
 
 To build this repo run `npm install` followed by `npm run prepare-deploy`.  
